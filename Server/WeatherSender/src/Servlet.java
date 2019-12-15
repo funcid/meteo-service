@@ -43,7 +43,7 @@ public class Servlet extends HttpServlet {
         printWriter.println(
                 "{ <a>Этот сайт серверная часть проекта, сайт администратора <a href=\"http://funcid.ru\">funcid.ru</a>." +
                 "<br>Сюда попадают даннае с датчиков погоды. Данные доступны всем." +
-                "<br>Последний файл: " + file.getName() + " }</a><br>"
+                "<br>Последний файл: " + file.getName() + ". <a href=\"https://github.com/S1mpleFunc/WeatherStation\">Исходник проекта</a>. }</a><br>"
         );
         FileReader fileReader = new FileReader(file);
         int c;
