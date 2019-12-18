@@ -10,6 +10,7 @@
 #include <ESP8266.h>
 #include <SoftwareSerial.h>
 
+
 #define RX 2
 #define TX 3
  
@@ -17,10 +18,15 @@
  
 Adafruit_BME280 bme;
 
+/* Название WIFI сети */
 String AP = "WIFI_NAME";  
+/* Пароль необходимой WIFI сети */
 String PASS = "PASSWORD"; 
+/* Сервер на который будут оправленны данные */
 String HOST = "func-weather.herokuapp.com";
+/* Порт сервера */
 int PORT = 80;
+/* Прочие переменные */
 int countTimeCommand;
 boolean found = false;
 
@@ -30,15 +36,19 @@ ESP8266 wifi(esp8266);
 void setup() {
     Serial.begin(9600);
     esp8266.begin(115200);
-    
+
+    /* Установка цифровых входов и выходов */
     pinMode(11, OUTPUT);
     pinMode(7, INPUT);
-    digitalWrite(11, HIGH);
- 
+    /* Откдючение звука на пищалке */
+    digitalWrite(11, LOW);
+
+    /* Проверка микросервиса и подключние к сети WIFI */
     sendCommand("AT", 5, "OK");
     sendCommand("AT+CWMODE=1", 5, "OK");
     sendCommand("AT+CWJAP=\"" + AP + "\",\"" + PASS + "\"", 20, "OK");
-  
+
+    /* Подключение датчика температуры / давления / влажности */
     Serial.println(F("BME280 тест"));
  
     if (!bme.begin()) {
@@ -50,8 +60,14 @@ void setup() {
 }
  
 void loop() { 
+    /* Вывод в порт полученные значения */
     printValues();
+
+    /* Если удалось установить соединение с серверов */
     if (wifi.createTCP(HOST, PORT)) {
+        /* Отправка данных GET запросом вида
+         *  GET /?loc=SVAO&temp=ТЕМПЕРАТУРА&pressure=ДАВЛЕНИЕ&humidity=ВЛАЖНОСТЬ
+        */
         String data = "GET /?loc=SVAO&temp=";
         data += bme.readTemperature();
         data += "&pressure=";
@@ -61,7 +77,11 @@ void loop() {
         data += " HTTP/1.1\r\nHost: ";
         data += HOST;
         data += "\r\n\r\n";
+        
+        /* Отправка запроса */
         wifi.send(data.c_str(), data.length());
+
+        /* Открывает мелодию на пещалке если зажата кнопка отладки */
         if (digitalRead(7) == HIGH) {
             tone(11, 18000, 300);
             delay(500);
@@ -71,6 +91,8 @@ void loop() {
             delay(500);
         }
         digitalWrite(11, HIGH);
+
+        /* Прекращает соединение */
         wifi.releaseTCP();
         Serial.println("Запрос отправлен");
     } else 
