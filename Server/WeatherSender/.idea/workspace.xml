@@ -7,14 +7,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1edd682a-78ec-4b02-9014-0cae6b1e6577" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/MapsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/MapsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/layout/activity_maps.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/layout/activity_maps.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WeatherStationClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WeatherStationClient/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="WeatherSender" />
@@ -156,6 +175,7 @@
       <workItem from="1576431724941" duration="4106000" />
       <workItem from="1576437568346" duration="1653000" />
       <workItem from="1576683306741" duration="789000" />
+      <workItem from="1576873237076" duration="7703000" />
     </task>
     <servers />
   </component>

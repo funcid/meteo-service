@@ -14,7 +14,7 @@ public class Servlet extends HttpServlet {
 
     public Servlet() {
         Date date = new Date();
-        file = new File("weather/" + (date.getYear() + 1900) + "_" + ((date.getMonth()%12+1)) + "_" + (date.getDay() + 8) + ".txt");
+        file = new File("weather/" + (date.getYear() + 1900) + "_" + ((date.getMonth() % 12 + 1)) + "_" + (date.getDay() + 8) + ".txt");
         if (!file.exists())
             file.getParentFile().mkdirs();
     }
@@ -42,15 +42,12 @@ public class Servlet extends HttpServlet {
         }
         printWriter.println(
                 "{ <a>Этот сайт серверная часть проекта, сайт администратора <a href=\"http://funcid.ru\">funcid.ru</a>." +
-                "<br>Сюда попадают даннае с датчиков погоды. Данные доступны всем." +
-                "<br>Последний файл: " + file.getName() + ". <a href=\"https://github.com/S1mpleFunc/WeatherStation\">Исходник проекта</a>. }</a><br>"
+                        "<br>Сюда попадают даннае с датчиков погоды. Данные доступны всем." +
+                        "<br>Последний файл: " + file.getName() + ". <a href=\"https://github.com/S1mpleFunc/WeatherStation\">Исходник проекта</a>. }</a><br>"
         );
-        FileReader fileReader = new FileReader(file);
-        int c;
-        while ((c = fileReader.read()) != -1)
-            response.getWriter().print((char) c);
-        fileReader.close();
-
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+            bufferedReader.lines().forEach(printWriter::println);
+        }
         printWriter.println("</html>");
         printWriter.close();
     }
