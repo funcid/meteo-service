@@ -68,7 +68,7 @@ void loop() {
         /* Отправка данных GET запросом вида
          *  GET /?loc=SVAO&temp=ТЕМПЕРАТУРА&pressure=ДАВЛЕНИЕ&humidity=ВЛАЖНОСТЬ
         */
-        String data = "GET /?loc=SVAO&temp=";
+        String data = "GET /?loc=SVIBLOVO&temp=";
         data += bme.readTemperature();
         data += "&pressure=";
         data += bme.readPressure() * 0.0075F;

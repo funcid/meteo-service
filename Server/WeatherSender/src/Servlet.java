@@ -3,7 +3,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.stream.Stream;
 
 /**
  * @author func 09.11.2019
@@ -27,8 +29,15 @@ public class Servlet extends HttpServlet {
         printWriter.println("<html>");
         if (request.getParameter("loc") != null) {
             FileWriter writer = new FileWriter(file, true);
-            writer.append(request.getParameter("loc"))
-                    .append("[time=")
+            Sensor sensor = Sensor.valueOf(request.getParameter("loc"));
+            sensor.setLastData(
+                    "temp=" + request.getParameter("temp") +
+                            ";pressure=" + request.getParameter("pressure") +
+                            ";humidity=" + request.getParameter("humidity")
+            );
+            writer.append("[location=")
+                    .append(sensor.getLocation())
+                    .append("&time=")
                     .append(String.valueOf(new Date().getTime()))
                     .append("&temperature=")
                     .append(request.getParameter("temp"))
@@ -36,17 +45,24 @@ public class Servlet extends HttpServlet {
                     .append(request.getParameter("pressure"))
                     .append("&humidity=")
                     .append(request.getParameter("humidity"))
-                    .append("]<br>");
+                    .append("]<br>\n");
             writer.flush();
             writer.close();
         }
-        printWriter.println(
-                "{ <a>Этот сайт серверная часть проекта, сайт администратора <a href=\"http://funcid.ru\">funcid.ru</a>." +
-                        "<br>Сюда попадают даннае с датчиков погоды. Данные доступны всем." +
-                        "<br>Последний файл: " + file.getName() + ". <a href=\"https://github.com/S1mpleFunc/WeatherStation\">Исходник проекта</a>. }</a><br>"
-        );
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
-            bufferedReader.lines().forEach(printWriter::println);
+            if (request.getParameter("mobile") != null) {
+                Stream.of(Sensor.values())
+                        .filter(sensor -> !sensor.getLastData().isEmpty())
+                        .map(sensor -> sensor.getLocation() + ":" + sensor.getLastData() + "#<br>")
+                        .forEach(printWriter::println);
+            } else {
+                printWriter.println(
+                        "{ <a>Этот сайт серверная часть проекта, сайт администратора <a href=\"http://funcid.ru\">funcid.ru</a>." +
+                                "<br>Сюда попадают даннае с датчиков погоды. Данные доступны всем." +
+                                "<br>Последний файл: " + file.getName() + ". <a href=\"https://github.com/S1mpleFunc/WeatherStation\">Исходник проекта</a>. }</a><br>"
+                );
+                bufferedReader.lines().forEach(printWriter::println);
+            }
         }
         printWriter.println("</html>");
         printWriter.close();
