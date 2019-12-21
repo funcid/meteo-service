@@ -1,8 +1,6 @@
 package ru.func.weatherclient;
 
 import android.os.Bundle;
-import android.text.Layout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
