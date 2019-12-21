@@ -63,7 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         new Timer().schedule(new TimerTask() {
 
             int secondsTemp = 0;
-            int delayUpdate = 15;
+            int delayUpdate = 10;
             int waitUpdater = 5;
 
             @Override
@@ -114,8 +114,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                         );
                                         nearData = splited[1]
                                                 .replace("temp=", "")
-                                                .replace(";pressure=", " C* ")
-                                                .replace(";humidity=", " мм.р.с ")
+                                                .replace(";pressure=", "C° ")
+                                                .replace(";humidity=", "torr ")
                                                 + "%";
                                         markerList.add(
                                                 mMap.addMarker(
@@ -129,7 +129,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             }
                         } else
                             secondsTemp++;
-                        output.setTextSize(20);
+                        output.setTextSize(21);
                         output.setText(
                                 "Обновление через " + (delayUpdate - secondsTemp + 1) + " сек.\n" + nearData
                         );

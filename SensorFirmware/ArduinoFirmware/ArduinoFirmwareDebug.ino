@@ -37,6 +37,12 @@ void setup() {
     Serial.begin(9600);
     esp8266.begin(115200);
 
+    /* Установка цифровых входов и выходов */
+    pinMode(11, OUTPUT);
+    pinMode(7, INPUT);
+    /* Откдючение звука на пищалке */
+    digitalWrite(11, LOW);
+
     /* Проверка микросервиса и подключние к сети WIFI */
     sendCommand("AT", 5, "OK");
     sendCommand("AT+CWMODE=1", 5, "OK");
@@ -74,6 +80,17 @@ void loop() {
         
         /* Отправка запроса */
         wifi.send(data.c_str(), data.length());
+
+        /* Открывает мелодию на пещалке если зажата кнопка отладки */
+        if (digitalRead(7) == HIGH) {
+            tone(11, 18000, 300);
+            delay(500);
+            tone(11, 20000, 300);
+            delay(500);
+            tone(11, 10000, 300);
+            delay(500);
+        }
+        digitalWrite(11, HIGH);
 
         /* Прекращает соединение */
         wifi.releaseTCP();
