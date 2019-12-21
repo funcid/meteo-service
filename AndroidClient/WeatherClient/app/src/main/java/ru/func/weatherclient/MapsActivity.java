@@ -1,8 +1,8 @@
 package ru.func.weatherclient;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.os.CountDownTimer;
+import android.text.Layout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -29,10 +29,10 @@ import okhttp3.Response;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private LatLng startLocation;
     private String data = "Загрузка...";
     private List<Marker> markerList = new ArrayList<>();
     private TextView output;
+    private String nearData = "";
     private String[] lines = {};
 
     @Override
@@ -51,7 +51,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        startLocation = new LatLng(55.860408, 37.639443);
+        LatLng startLocation = new LatLng(55.860408, 37.639443);
         markerList.add(mMap.addMarker(
                 new MarkerOptions()
                         .position(startLocation)
@@ -112,17 +112,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                                 Float.parseFloat(cords[0]),
                                                 Float.parseFloat(cords[1])
                                         );
+                                        nearData = splited[1]
+                                                .replace("temp=", "")
+                                                .replace(";pressure=", " C* ")
+                                                .replace(";humidity=", " мм.р.с ")
+                                                + "%";
                                         markerList.add(
                                                 mMap.addMarker(
                                                         new MarkerOptions()
                                                                 .position(location)
-                                                                .title(
-                                                                        splited[1]
-                                                                                .replace("temp=", "")
-                                                                                .replace(";pressure=", " C* ")
-                                                                                .replace(";humidity=", " мм.р.с ")
-                                                                                + "%"
-                                                                )
+                                                                .title(nearData)
                                                 )
                                         );
                                     }
@@ -130,7 +129,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             }
                         } else
                             secondsTemp++;
-                        output.setText("Обновление через " + (delayUpdate - secondsTemp + 1) + " сек.");
+                        output.setTextSize(20);
+                        output.setText(
+                                "Обновление через " + (delayUpdate - secondsTemp + 1) + " сек.\n" + nearData
+                        );
                     }
                 });
             }

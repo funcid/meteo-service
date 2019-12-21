@@ -3,8 +3,8 @@
  */
 public enum  Sensor {
 
-    SVIBLOVO("55.856336, 37.654575", ""),
     CENTER("55.753126, 37.620839", ""),
+    SVIBLOVO("55.856336, 37.654575", ""),
     ;
 
     private String location;
