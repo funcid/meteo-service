@@ -13,7 +13,7 @@
     </jsp-config>
     <servlet>
         <servlet-name>Servlet</servlet-name>
-        <servlet-class>Servlet</servlet-class>
+        <servlet-class>ru.func.weathersender.Servlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>

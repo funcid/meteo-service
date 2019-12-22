@@ -7,19 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1edd682a-78ec-4b02-9014-0cae6b1e6577" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/MapsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/MapsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherSender.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherSender.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +65,11 @@
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -182,7 +180,7 @@
       <workItem from="1576437568346" duration="1653000" />
       <workItem from="1576683306741" duration="789000" />
       <workItem from="1576873237076" duration="8326000" />
-      <workItem from="1576931813803" duration="10619000" />
+      <workItem from="1576931813803" duration="11517000" />
     </task>
     <servers />
   </component>
