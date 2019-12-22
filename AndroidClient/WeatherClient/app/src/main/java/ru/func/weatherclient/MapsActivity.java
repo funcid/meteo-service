@@ -27,10 +27,9 @@ import okhttp3.Response;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private String data = "Загрузка...";
+    private String data = "Загрузка...", nearData = "";
     private List<Marker> markerList = new ArrayList<>();
     private TextView output;
-    private String nearData = "";
     private String[] lines = {};
 
     @Override
@@ -57,13 +56,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         ));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(startLocation));
 
-
         new Timer().schedule(new TimerTask() {
-
-            int secondsTemp = 0;
-            int delayUpdate = 10;
-            int waitUpdater = 5;
-
+            int secondsTemp = 0, delayUpdate = 10, waitUpdater = 5;
             @Override
             public void run() {
                 MapsActivity.this.runOnUiThread(new Runnable() {
@@ -72,7 +66,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             waitUpdater--;
                         if (waitUpdater > 0)
                             return;
-                        if (secondsTemp == delayUpdate || waitUpdater > -3) {
+                        else if (secondsTemp == delayUpdate || waitUpdater > -3) {
                             secondsTemp = 1;
                             Request request = new Request.Builder()
                                     .url("http://func-weather.herokuapp.com/?mobile=true")
@@ -80,24 +74,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             new OkHttpClient().newCall(request)
                                     .enqueue(new Callback() {
                                         @Override
-                                        public void onFailure(final Call call, IOException e) {
-                                            data = "Ошибка";
-                                            e.printStackTrace();
-                                        }
-
+                                        public void onFailure(final Call call, IOException e) { }
                                         @Override
                                         public void onResponse(Call call, final Response response) {
                                             try {
                                                 data = response.body().string();
                                                 lines = data.split("#");
-                                            } catch (Exception e) {
-                                                e.printStackTrace();
-                                            }
+                                            } catch (Exception ignored) { }
                                         }
                                     });
                             for (Marker marker : markerList)
                                 marker.remove();
-                            if (lines.length > 0) {
+                            if (lines.length > 0)
                                 for (String line : lines) {
                                     String[] splited = line
                                             .replace("<html>", "")
@@ -115,15 +103,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                                 .replace(";pressure=", "C° ")
                                                 .replace(";humidity=", "torr ")
                                                 + "%";
-                                        markerList.add(
-                                                mMap.addMarker(
-                                                        new MarkerOptions()
-                                                                .position(location)
-                                                                .title(nearData)
-                                                )
-                                        );
+                                        markerList.add(mMap.addMarker(new MarkerOptions().position(location).title(nearData)));
                                     }
-                                }
                             }
                         } else
                             secondsTemp++;
