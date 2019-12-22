@@ -1,34 +1,31 @@
 apply plugin: 'com.android.application'
 
-
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "ru.func.weatherclient"
-        minSdkVersion 18
+        minSdkVersion 15
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
     }
 }
 
 android {
-
     buildTypes {
         debug {
             resValue "string", "google_maps_api_key", "AIzaSyBnBy3pgLZ9CaOH_6kto_huO4apQElnNHs"
         }
         release {
+            /* debuggable true
+             * shrinkResources false
+             * minifyEnabled false
+             */
             resValue "string", "google_maps_api_key", "AIzaSyBnBy3pgLZ9CaOH_6kto_huO4apQElnNHs"
         }
-    }}
+    }
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
