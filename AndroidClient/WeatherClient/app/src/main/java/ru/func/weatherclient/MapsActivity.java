@@ -27,6 +27,7 @@ import okhttp3.Response;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private LatLng chosenMarker;
     private String data = "Загрузка...", nearData = "";
     private List<Marker> markerList = new ArrayList<>();
     private TextView output;
@@ -55,9 +56,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         .title(data)
         ));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(startLocation));
+        mMap.setOnMarkerClickListener(
+                new GoogleMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(Marker marker) {
+                        chosenMarker = marker.getPosition();
+                        return false;
+                    }
+                }
+        );
 
         new Timer().schedule(new TimerTask() {
             int secondsTemp = 0, delayUpdate = 10, waitUpdater = 5;
+            String chosenData = "";
+
             @Override
             public void run() {
                 MapsActivity.this.runOnUiThread(new Runnable() {
@@ -74,13 +86,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             new OkHttpClient().newCall(request)
                                     .enqueue(new Callback() {
                                         @Override
-                                        public void onFailure(final Call call, IOException e) { }
+                                        public void onFailure(final Call call, IOException e) {
+                                        }
+
                                         @Override
                                         public void onResponse(Call call, final Response response) {
                                             try {
-                                                data = response.body().string();
-                                                lines = data.split("#");
-                                            } catch (Exception ignored) { }
+                                                lines = response.body().string().split("#");
+                                            } catch (Exception ignored) {
+                                            }
                                         }
                                     });
                             for (Marker marker : markerList)
@@ -103,14 +117,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                                 .replace(";pressure=", "C° ")
                                                 .replace(";humidity=", "torr ")
                                                 + "%";
-                                        markerList.add(mMap.addMarker(new MarkerOptions().position(location).title(nearData)));
+                                        if (location.equals(chosenMarker))
+                                            chosenData = nearData;
+                                        markerList.add(
+                                                mMap.addMarker(new MarkerOptions()
+                                                        .position(location)
+                                                        .title(nearData)
+                                                ));
                                     }
-                            }
+                                }
                         } else
                             secondsTemp++;
                         output.setTextSize(21);
-                        output.setText(
-                                "Обновление через " + (delayUpdate - secondsTemp + 1) + " сек.\n" + nearData
+                        output.setText("" +
+                                "Обновление через " +
+                                (delayUpdate - secondsTemp + 1) +
+                                " сек.\n" +
+                                (chosenData.isEmpty() ? nearData : chosenData)
                         );
                     }
                 });
