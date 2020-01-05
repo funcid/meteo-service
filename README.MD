@@ -1,9 +1,8 @@
 <h1 align=center>MeteoService</h1>
-<hr>
 
 + Сервисная часть (Java Servlet Server)
 	- Активная версия: https://func-weather.herokuapp.com	
-	<img src="http://screenshot.ru/39b827f3b8c5454e6799d6ca4dc4447e.png" width="70%"/>
+	<img src="http://screenshot.ru/381b80e5f6b0889fd60803618844e38a.png" width="70%"/>
 + Аппаратная составляющая (Arduino Firmware)
 	- Пример сборки и прошивка находятся в одноименном каталоге
 	<img src="https://github.com/S1mpleFunc/WeatherStation/blob/master/SensorFirmware/SensorExample.jpg?raw=true" width="50%"/>
