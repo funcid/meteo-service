@@ -67,19 +67,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         );
 
         new Timer().schedule(new TimerTask() {
-            int secondsTemp = 0, delayUpdate = 10, waitUpdater = 5;
+            int secondsTemp = 0, delayUpdate = -4;
             String chosenData = "";
+            boolean first = true;
 
             @Override
             public void run() {
                 MapsActivity.this.runOnUiThread(new Runnable() {
                     public void run() {
-                        if (waitUpdater > -5)
-                            waitUpdater--;
-                        if (waitUpdater > 0)
-                            return;
-                        else if (secondsTemp == delayUpdate || waitUpdater > -3) {
-                            secondsTemp = 1;
+                        if (secondsTemp == delayUpdate || first) {
+                            secondsTemp = 0;
+                            delayUpdate = delayUpdate > 30 ? delayUpdate : delayUpdate + 5;
                             Request request = new Request.Builder()
                                     .url("http://func-weather.herokuapp.com/mobile")
                                     .build();
@@ -90,13 +88,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                         }
 
                                         @Override
-                                        public void onResponse(Call call, final Response response) throws IOException{
+                                        public void onResponse(Call call, final Response response) throws IOException {
                                             lines = response.body().string().split("#");
                                         }
                                     });
                             for (Marker marker : markerList)
                                 marker.remove();
-                            if (lines.length > 0)
+                            if (lines.length > 0) {
                                 for (String line : lines) {
                                     String[] splited = line
                                             .replace("<html>", "")
@@ -123,12 +121,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                                 ));
                                     }
                                 }
-                        } else
-                            secondsTemp++;
+                            }
+                            first = false;
+                        }
+                        secondsTemp++;
                         output.setTextSize(21);
                         output.setText("" +
                                 "Обновление через " +
-                                (delayUpdate - secondsTemp + 1) +
+                                (delayUpdate - secondsTemp) +
                                 " сек.\n" +
                                 (chosenData.isEmpty() ? nearData : chosenData)
                         );

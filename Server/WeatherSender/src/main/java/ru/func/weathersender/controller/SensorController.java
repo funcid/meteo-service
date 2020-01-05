@@ -12,10 +12,7 @@ import ru.func.weathersender.repository.SensorRepository;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -27,7 +24,7 @@ public class SensorController {
 
     @Autowired
     private SensorRepository sensorRepository;
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy-k-m", new Locale("en", "RU"));
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy-k-m", new Locale("ru", "RU"));
 
     @RequestMapping("/")
     public String index(
@@ -78,7 +75,7 @@ public class SensorController {
     }
 
     @RequestMapping(path = "/findSensorsByLocation", method = POST)
-    public ModelAndView findSensorsByCompany(@RequestParam String location) {
+    public ModelAndView findSensorsByLocation(@RequestParam String location) {
         ModelAndView modelAndView = new ModelAndView("findSensorsByLocation");
         modelAndView.addObject("location", location);
 
