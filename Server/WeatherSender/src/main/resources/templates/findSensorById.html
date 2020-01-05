@@ -26,18 +26,53 @@
 <br class="container">
 <center>
     <div th:unless="${#lists.isEmpty(sensor)}" align="left" style="width: 25%;">
-        <b>Показатели датчика с ID <span th:text="${id}">[ID]</span>:</b>
-        <li>Время получения: <b th:text="${sensor.timestamp}">[SENSOR_TIMESTAMP]</b></li>
-        <li>Локация: <b th:text="${sensor.location}">[SENSOR_LOCATION]</b></li>
-        <li>Температура: <b th:text="${sensor.temperature}">[SENSOR_TEMPERATURE]</b> C°</li>
-        <li>Давление: <b th:text="${sensor.pressure}">[SENSOR_PRESSURE]</b> мм. р. с.</li>
-        <li>Влажность: <b th:text="${sensor.humidity}">[SENSOR_HUMIDITY]</b>%</li>
+        <b>
+            Показатели датчика с ID
+            <span th:text="${id}">
+                [ID]
+            </span>
+            :
+        </b>
+        <li>Время получения:
+            <b th:text="${sensor.timestamp}">
+                [SENSOR_TIMESTAMP]
+            </b>
+        </li>
+        <li>Локация:
+            <b th:text="${sensor.location}">
+                [SENSOR_LOCATION]
+            </b>
+        </li>
+        <li>Температура:
+            <b th:text="${sensor.temperature}">
+                [SENSOR_TEMPERATURE]
+            </b>
+            C°
+        </li>
+        <li>Давление:
+            <b th:text="${sensor.pressure}">
+                [SENSOR_PRESSURE]
+            </b>
+            мм. р. с.
+        </li>
+        <li>Влажность:
+            <b th:text="${sensor.humidity}">
+                [SENSOR_HUMIDITY]
+            </b>
+            %
+        </li>
     </div>
     <div th:if="${#lists.isEmpty(sensor)}">
-        <b>Снимок датчика с ID <span th:text="${id}">[ID]</span> не найден.</b>
+        <b>
+            Снимок датчика с ID <span th:text="${id}">[ID]</span> не найден.
+        </b>
     </div>
     </br>
-    <p><a href="/">Вернуться</a></p>
+    <p>
+        <a href="/">
+            Вернуться
+        </a>
+    </p>
 </center>
 </div>
 </body>

@@ -32,16 +32,34 @@
                 датированные <span th:text="${timestamp}">[TIMESTAMP]</span>:
             </b>
             <ul th:each="sensor : ${sensors}">
-                <li>Локация: <b th:text="${sensor.location}">[SENSOR_LOCATION]</b></li>
-                <li>Температура: <b th:text="${sensor.temperature}">[SENSOR_TEMPERATURE]</b> C°</li>
-                <li>Давление: <b th:text="${sensor.pressure}">[SENSOR_PRESSURE]</b> мм. р. с.</li>
-                <li>Влажность: <b th:text="${sensor.humidity}">[SENSOR_HUMIDITY]</b>%</li>
+                <li>Локация:
+                    <b th:text="${sensor.location}">
+                        [SENSOR_LOCATION]</b>
+                </li>
+                <li>Температура:
+                    <b th:text="${sensor.temperature}">[SENSOR_TEMPERATURE]</b>
+                    C°
+                </li>
+                <li>Давление:
+                    <b th:text="${sensor.pressure}">[SENSOR_PRESSURE]</b>
+                    мм. р. с.
+                </li>
+                <li>Влажность:
+                    <b th:text="${sensor.humidity}">[SENSOR_HUMIDITY]</b>
+                    %
+                </li>
                 </br>
             </ul>
         </div>
     </div>
     <div th:if="${#lists.isEmpty(sensors)}">
-        <b>Датчики в <span th:text="${timestamp}">[DATE]</span> данных не оправляли.</b>
+        <b>
+            Датчики в
+            <span th:text="${timestamp}">
+                [DATE]
+            </span>
+            данных не оправляли.
+        </b>
     </div>
 
     <p><a href="/">Вернуться</a></p>

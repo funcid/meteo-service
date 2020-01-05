@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import ru.func.weathersender.Location;
 import ru.func.weathersender.entity.Sensor;
 import ru.func.weathersender.repository.SensorRepository;
 
@@ -29,11 +31,10 @@ public class SensorController {
 
     @RequestMapping("/")
     public String index(
-            @RequestParam(name = "loc", required=false, defaultValue="none") String location,
-            @RequestParam(name = "pressure", required=false) Float pressure,
-            @RequestParam(name = "humidity", required=false) Float humidity,
-            @RequestParam(name = "temperature", required=false) Float temperature
-    ) {
+            @RequestParam(name = "loc", required = false, defaultValue = "none") String location,
+            @RequestParam(name = "pressure", required = false) Float pressure,
+            @RequestParam(name = "humidity", required = false) Float humidity,
+            @RequestParam(name = "temperature", required = false) Float temperature) {
         if (!location.equals("none")) {
             sensorRepository.save(Sensor.builder()
                     .location(location)
@@ -47,11 +48,29 @@ public class SensorController {
         return "index";
     }
 
+    @ResponseBody
+    @RequestMapping("/mobile")
+    public String sendMobileNewData() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Location location : Location.values()) {
+            sensorRepository.findNewestSensorByLocation(location.name()).ifPresent(sensor -> {
+                stringBuilder.append(location.getLocation());
+                stringBuilder.append(":temperature=");
+                stringBuilder.append(sensor.getTemperature());
+                stringBuilder.append(";pressure=");
+                stringBuilder.append(sensor.getPressure());
+                stringBuilder.append(";humidity=");
+                stringBuilder.append(sensor.getHumidity());
+                stringBuilder.append("#</br>\n");
+            });
+        }
+        return stringBuilder.toString();
+    }
+
     @RequestMapping(path = "/findSensorById", method = POST)
     public ModelAndView findSensorById(@RequestParam Integer id) {
         ModelAndView modelAndView = new ModelAndView("findSensorById");
         modelAndView.addObject("id", id);
-
         sensorRepository.findById(id)
                 .ifPresent(sensor -> modelAndView.addObject("sensor", sensor));
 

@@ -7,7 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1edd682a-78ec-4b02-9014-0cae6b1e6577" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/artifacts/weather/weather.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/config/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/SensorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/SensorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/SensorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/SensorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/findSensorById.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/findSensorById.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/findSensorsByLocation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/findSensorsByLocation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/findSensorsByTimestamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/findSensorsByTimestamp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,9 +44,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -218,7 +225,7 @@
       <workItem from="1578115760957" duration="6574000" />
       <workItem from="1578171914279" duration="47000" />
       <workItem from="1578172356964" duration="23217000" />
-      <workItem from="1578198116007" duration="366000" />
+      <workItem from="1578198116007" duration="4153000" />
     </task>
     <servers />
   </component>

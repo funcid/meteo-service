@@ -32,19 +32,52 @@
                 из <span th:text="${location}">[LOCATION]</span>:
             </b>
             <ul th:each="sensor : ${sensors}">
-                <li>Время получения: <b th:text="${sensor.timestamp}">[SENSOR_TIMESTAMP]</b></li>
-                <li>Температура: <b th:text="${sensor.temperature}">[SENSOR_TEMPERATURE]</b> C°</li>
-                <li>Давление: <b th:text="${sensor.pressure}">[SENSOR_PRESSURE]</b> мм. р. с.</li>
-                <li>Влажность: <b th:text="${sensor.humidity}">[SENSOR_HUMIDITY]</b>%</li>
+                <li>
+                    Время получения:
+                    <b th:text="${sensor.timestamp}">
+                        [SENSOR_TIMESTAMP]
+                    </b>
+                </li>
+                <li>
+                    Температура:
+                    <b th:text="${sensor.temperature}">
+                        [SENSOR_TEMPERATURE]
+                    </b>
+                    C°
+                </li>
+                <li>
+                    Давление:
+                    <b th:text="${sensor.pressure}">
+                        [SENSOR_PRESSURE]
+                    </b>
+                    мм. р. с.
+                </li>
+                <li>
+                    Влажность:
+                    <b th:text="${sensor.humidity}">
+                        [SENSOR_HUMIDITY]
+                    </b>
+                    %
+                </li>
                 </br>
             </ul>
         </div>
     </div>
     <div th:if="${#lists.isEmpty(sensors)}">
-        <b>Датчиков из <span th:text="${location}">[LOCATION]</span> не было найдено.</b>
+        <b>
+            Датчиков из
+            <span th:text="${location}">
+                [LOCATION]
+            </span>
+            не было найдено.
+        </b>
     </div>
 
-    <p><a href="/">Вернуться</a></p>
+    <p>
+        <a href="/">
+            Вернуться
+        </a>
+    </p>
 </div>
 </body>
 </html>
