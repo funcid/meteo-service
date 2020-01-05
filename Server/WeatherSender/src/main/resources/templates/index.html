@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>MeteoService</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <span class="navbar-brand mb-0 h1">
+            <img src="/assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            MeteoService
+        </span>
+        <a class="navbar-text" href="https://github.com/funcid/MeteoService" target="_blank">
+            <img src="/assets/github.svg" width="24" height="24" class="d-inline-block align-top"
+                 alt="GitHub repository">
+            Source code
+        </a>
+    </div>
+</nav>
+
+<div class="container">
+    <h3>Поиск</h3>
+    <form name="findSensorById" method="post" action="/findSensorById">
+        <div class="form-group">
+            <label for="id">Номер запроса:</label>
+            <input placeholder="1, 2, 21" type="text" class="form-control" id="id" name="id">
+        </div>
+        <button type="submit" class="btn btn-primary">Найти</button>
+    </form>
+    <form name="findSensorsByLocation" method="post" action="/findSensorsByLocation">
+        <div class="form-group">
+            <label for="location">Где находится датчик?</label>
+            <input placeholder="Sviblovo, Test" type="text" class="form-control" id="location" name="location">
+        </div>
+        <button type="submit" class="btn btn-primary">Найти</button>
+    </form>
+    <form name="findSensorsByTimestamp" method="post" action="/findSensorsByTimestamp">
+        <div class="form-group">
+            <label for="timestamp">Когда пришли данные?</label>
+            <input placeholder="дд-ММ-гггг-ч-м" type="text" class="form-control" id="timestamp" name="timestamp">
+        </div>
+        <button type="submit" class="btn btn-primary">Найти</button>
+    </form>
+</div>
+</br>
+</br>
+<div size="1" class="footer" align="center" style="background-color: #eee; vertical-align: bottom;">
+    <a href="http://funcid.ru">Сайт автора</a></br>
+    <a href="https://github.com/funcid/MeteoService/blob/master/LICENSE">
+        Copyright (c) 2019 funcid
+    </a>
+</div>
+</body>
+</html>

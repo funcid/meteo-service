@@ -1,9 +1,6 @@
 /* 
  * https://github.com/S1mpleFunc/WeatherStation 
  *  
- * 
- * 
- * 
  * MIT License
  * 
  * Copyright (c) 2019 S1mpleFunc
@@ -93,7 +90,7 @@ void loop()
         /* Отправка данных GET запросом вида
          *  GET /?loc=SVAO&temp=ТЕМПЕРАТУРА&pressure=ДАВЛЕНИЕ&humidity=ВЛАЖНОСТЬ
         */
-        String data = "GET /?loc=SVIBLOVO&temp=";
+        String data = "GET /?loc=SVIBLOVO&temprature=";
         data += bme.readTemperature();
         data += "&pressure=";
         data += bme.readPressure() * 0.0075F;
