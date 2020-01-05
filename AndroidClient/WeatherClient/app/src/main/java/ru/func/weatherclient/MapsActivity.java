@@ -49,7 +49,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng startLocation = new LatLng(55.860408, 37.639443);
+        LatLng startLocation = new LatLng(55, 37);
         markerList.add(mMap.addMarker(
                 new MarkerOptions()
                         .position(startLocation)
@@ -81,7 +81,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         else if (secondsTemp == delayUpdate || waitUpdater > -3) {
                             secondsTemp = 1;
                             Request request = new Request.Builder()
-                                    .url("http://func-weather.herokuapp.com/?mobile=true")
+                                    .url("http://func-weather.herokuapp.com/mobile")
                                     .build();
                             new OkHttpClient().newCall(request)
                                     .enqueue(new Callback() {
@@ -90,11 +90,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                         }
 
                                         @Override
-                                        public void onResponse(Call call, final Response response) {
-                                            try {
-                                                lines = response.body().string().split("#");
-                                            } catch (Exception ignored) {
-                                            }
+                                        public void onResponse(Call call, final Response response) throws IOException{
+                                            lines = response.body().string().split("#");
                                         }
                                     });
                             for (Marker marker : markerList)
@@ -113,7 +110,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                                 Float.parseFloat(cords[1])
                                         );
                                         nearData = splited[1]
-                                                .replace("temp=", "")
+                                                .replace("temperature=", "")
                                                 .replace(";pressure=", "C° ")
                                                 .replace(";humidity=", "torr ")
                                                 + "%";
