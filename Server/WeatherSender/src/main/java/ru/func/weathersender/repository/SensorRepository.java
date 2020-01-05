@@ -18,6 +18,6 @@ public interface SensorRepository extends JpaRepository<Sensor, Integer> {
 
     List<Sensor> findByTimestamp(String timestamp);
 
-    @Query(value = "SELECT *, MAX(id) FROM sensors WHERE location=?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM sensors WHERE id = (SELECT MAX(id) FROM sensors WHERE location = ?1)", nativeQuery = true)
     Optional<Sensor> findNewestSensorByLocation(String location);
 }
