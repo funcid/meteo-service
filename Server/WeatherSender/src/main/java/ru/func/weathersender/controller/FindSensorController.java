@@ -37,9 +37,13 @@ public class FindSensorController extends DatableController {
 
         modelAndView.addObject("location", location);
 
-        List<Sensor> reversedList =
-                sensorRepository.findByLocation(Location.valueOf(location.toUpperCase()).getLocation());
-        Collections.reverse(reversedList);
+        List<Sensor> reversedList = new ArrayList<>();
+
+        if (Location.containsName(location)) {
+            Location locationObject = Location.valueOf(location.toUpperCase());
+            reversedList = sensorRepository.findByLocation(locationObject.getLocation());
+            Collections.reverse(reversedList);
+        }
 
         modelAndView.addObject("sensors", reversedList);
 
