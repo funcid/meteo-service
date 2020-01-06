@@ -7,16 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1edd682a-78ec-4b02-9014-0cae6b1e6577" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/release/app-release.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/release/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/MapsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/MapsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/SensorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/SensorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/SensorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/SensorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,9 +38,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Jsp File" />
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -77,25 +70,25 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/assets" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources\assets" />
+      <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.func.weathersender.config" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources\templates" />
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources" />
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\webapp" />
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\webapp\WEB-INF\templates" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ru.func.weathersender.config" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources\assets" />
-      <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -229,7 +222,14 @@
       <workItem from="1578171914279" duration="47000" />
       <workItem from="1578172356964" duration="23217000" />
       <workItem from="1578198116007" duration="4153000" />
-      <workItem from="1578202313113" duration="7340000" />
+      <workItem from="1578202313113" duration="8750000" />
+      <workItem from="1578271523945" duration="8163000" />
+      <workItem from="1578279712614" duration="37000" />
+      <workItem from="1578279765457" duration="49000" />
+      <workItem from="1578279828645" duration="2568000" />
+      <workItem from="1578282700471" duration="176000" />
+      <workItem from="1578282888440" duration="65000" />
+      <workItem from="1578283134742" duration="3328000" />
     </task>
     <servers />
   </component>

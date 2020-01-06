@@ -2,8 +2,11 @@ package ru.func.weathersender.entity;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import ru.func.weathersender.util.Location;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author func 21.12.2019
