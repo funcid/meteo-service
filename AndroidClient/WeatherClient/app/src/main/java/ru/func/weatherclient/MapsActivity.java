@@ -79,6 +79,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             secondsTemp = 0;
                             delayUpdate = delayUpdate > 30 ? delayUpdate : delayUpdate + 5;
                             Request request = new Request.Builder()
+                                    .addHeader("Accept", "application/json")
                                     .url("http://func-weather.herokuapp.com/mobile")
                                     .build();
                             new OkHttpClient().newCall(request)

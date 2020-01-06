@@ -5,8 +5,11 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.func.weathersender.entity.Sensor;
+import ru.func.weathersender.parser.XmlSensorParser;
 import ru.func.weathersender.util.Location;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.parsers.ParserConfigurationException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -16,7 +19,7 @@ import java.util.stream.Stream;
  * @author func 06.01.2020
  */
 @RestController
-@RequestMapping(path = "/modile")
+@RequestMapping(path = "/mobile")
 public class MobileController extends DatableController {
     private static final String APPLICATION_JSON_VALUE_UTF8 = MediaType.APPLICATION_JSON_VALUE + ";charset=utf-8";
     private static final String APPLICATION_XML_VALUE_UTF8 = MediaType.APPLICATION_XML_VALUE + ";charset=utf-8";
@@ -31,8 +34,8 @@ public class MobileController extends DatableController {
     @RequestMapping(
             headers = HttpHeaders.ACCEPT + "=" + MediaType.APPLICATION_XML_VALUE,
             produces = APPLICATION_XML_VALUE_UTF8)
-    public List<Sensor> sendMobileNewDataXml() {
-        return getSensorList();
+    public String sendMobileNewDataXml() throws ParserConfigurationException {
+        return new XmlSensorParser().parseSensorToFormat(getSensorList());
     }
 
     private List<Sensor> getSensorList() {
