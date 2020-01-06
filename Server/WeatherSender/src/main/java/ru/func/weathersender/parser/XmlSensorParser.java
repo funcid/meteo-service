@@ -3,7 +3,6 @@ package ru.func.weathersender.parser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import ru.func.weathersender.entity.Sensor;
-import ru.func.weathersender.util.Location;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -43,10 +42,15 @@ public class XmlSensorParser implements SensorDataParser {
         sensors.forEach(sensor -> {
             Element contentElement = document.createElement("sensor");
 
-            addNewElementToRoot(contentElement, "location", sensor.getLocation());
-            addNewElementToRoot(contentElement, "temperature", sensor.getTemperature().toString());
-            addNewElementToRoot(contentElement, "pressure", sensor.getPressure().toString());
-            addNewElementToRoot(contentElement, "humidity", sensor.getHumidity().toString());
+            createAndAddData(
+                    contentElement,
+                    new String[]{
+                            sensor.getLocation(),
+                            sensor.getTemperature().toString(),
+                            sensor.getPressure().toString(),
+                            sensor.getHumidity().toString()
+                    }
+            );
 
             rootElement.appendChild(contentElement);
         });
@@ -74,9 +78,12 @@ public class XmlSensorParser implements SensorDataParser {
         return transformer;
     }
 
-    private void addNewElementToRoot(Element parent, String name, String text) {
-        Element location = document.createElement(name);
-        location.setTextContent(text);
-        parent.appendChild(location);
+    private void createAndAddData(Element parent, String[] args) {
+        String[] nameArray = "location, temperature, pressure, humidity".split(", ");
+        for (int i = 0; i < nameArray.length; i++) {
+            Element location = document.createElement(nameArray[i]);
+            location.setTextContent(args[i]);
+            parent.appendChild(location);
+        }
     }
 }
