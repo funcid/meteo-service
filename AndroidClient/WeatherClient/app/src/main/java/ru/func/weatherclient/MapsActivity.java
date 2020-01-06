@@ -11,6 +11,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +35,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private String data = "Загрузка...", nearData = "";
     private List<Marker> markerList = new ArrayList<>();
     private TextView output;
-    private String[] lines = {};
+    private JSONArray json;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +80,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 MapsActivity.this.runOnUiThread(new Runnable() {
                     public void run() {
                         if (secondsTemp == delayUpdate || first) {
+
                             secondsTemp = 0;
                             delayUpdate = delayUpdate > 30 ? delayUpdate : delayUpdate + 5;
                             Request request = new Request.Builder()
@@ -85,43 +90,44 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             new OkHttpClient().newCall(request)
                                     .enqueue(new Callback() {
                                         @Override
-                                        public void onFailure(final Call call, IOException e) {
-                                        }
-
+                                        public void onFailure(final Call call, IOException e) { }
                                         @Override
                                         public void onResponse(Call call, final Response response) throws IOException {
-                                            lines = response.body().string().split("#");
+                                            try {
+                                                json = new JSONArray(response.body().string());
+                                                System.out.println(json.toString());
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
                                         }
                                     });
                             for (Marker marker : markerList)
                                 marker.remove();
-                            if (lines.length > 0) {
-                                for (String line : lines) {
-                                    String[] splited = line
-                                            .replace("<html>", "")
-                                            .replace("<br>", "")
-                                            .replace("</html>", "")
-                                            .split(":");
-                                    String[] cords = splited[0].split(",");
-                                    if (cords.length > 1) {
+                            try {
+                                if (json != null) {
+                                    for (int i = 0; i < json.length(); i++) {
+                                        JSONObject sensor = json.getJSONObject(i);
+
+                                        String[] cords = sensor.getString("location").split(", ");
                                         LatLng location = new LatLng(
                                                 Float.parseFloat(cords[0]),
                                                 Float.parseFloat(cords[1])
                                         );
-                                        nearData = splited[1]
-                                                .replace("temperature=", "")
-                                                .replace(";pressure=", "C° ")
-                                                .replace(";humidity=", "torr ")
-                                                + "%";
+                                        nearData = sensor.getString("temperature") + " C°" +
+                                                sensor.getString("pressure") + " torr" +
+                                                sensor.getString("humidity") + "%";
                                         if (location.equals(chosenMarker))
                                             chosenData = nearData;
                                         markerList.add(
                                                 mMap.addMarker(new MarkerOptions()
                                                         .position(location)
                                                         .title(nearData)
-                                                ));
+                                                )
+                                        );
                                     }
                                 }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
                             first = false;
                         }
@@ -139,4 +145,3 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }, 0, 1000);
     }
 }
-
