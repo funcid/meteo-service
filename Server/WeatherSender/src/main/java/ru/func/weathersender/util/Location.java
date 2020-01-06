@@ -1,4 +1,4 @@
-package ru.func.weathersender;
+package ru.func.weathersender.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
