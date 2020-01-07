@@ -1,11 +1,13 @@
 package ru.func.weathersender.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.func.weathersender.entity.Sensor;
 import ru.func.weathersender.util.Location;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -13,6 +15,7 @@ import java.util.Locale;
 /**
  * @author func 06.01.2020
  */
+@Slf4j
 @Controller
 public class IndexController extends DatableController {
 
@@ -24,9 +27,10 @@ public class IndexController extends DatableController {
             @RequestParam(name = "loc", required = false, defaultValue = "none") String location,
             @RequestParam(name = "pressure", required = false) Float pressure,
             @RequestParam(name = "humidity", required = false) Float humidity,
-            @RequestParam(name = "temperature", required = false) Float temperature) {
+            @RequestParam(name = "temperature", required = false) Float temperature,
+            HttpServletRequest request) {
         if (!location.equals("none")) {
-            sensorRepository.save(Sensor.builder()
+            Sensor sensor = sensorRepository.save(Sensor.builder()
                     .location(Location.valueOf(location).getCords())
                     .pressure(pressure)
                     .humidity(humidity)
@@ -34,6 +38,7 @@ public class IndexController extends DatableController {
                     .timestamp(dateFormat.format(new Date()))
                     .build()
             );
+            log.info("Создана новая запись с ID {}. IP отправителя {}.", sensor.getId(), request.getHeader("X-FORWARDED-FOR"));
         }
         return "index";
     }

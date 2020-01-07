@@ -1,5 +1,6 @@
 package ru.func.weathersender.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.func.weathersender.repository.SensorRepository;
 
