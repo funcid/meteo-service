@@ -41,17 +41,13 @@ public class XmlSensorParser implements SensorDataParser {
 
         sensors.forEach(sensor -> {
             Element contentElement = document.createElement("sensor");
-
             createAndAddData(
                     contentElement,
-                    new String[]{
-                            sensor.getLocation(),
-                            sensor.getTemperature().toString(),
-                            sensor.getPressure().toString(),
-                            sensor.getHumidity().toString()
-                    }
+                    sensor.getLocation(),
+                    sensor.getTemperature().toString(),
+                    sensor.getPressure().toString(),
+                    sensor.getHumidity().toString()
             );
-
             rootElement.appendChild(contentElement);
         });
 
@@ -78,7 +74,7 @@ public class XmlSensorParser implements SensorDataParser {
         return transformer;
     }
 
-    private void createAndAddData(Element parent, String[] args) {
+    private void createAndAddData(Element parent, String... args) {
         String[] nameArray = "location, temperature, pressure, humidity".split(", ");
         for (int i = 0; i < nameArray.length; i++) {
             Element location = document.createElement(nameArray[i]);
