@@ -8,7 +8,6 @@ import ru.func.weathersender.entity.Sensor;
 import ru.func.weathersender.parser.XmlSensorParser;
 import ru.func.weathersender.util.Location;
 
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.parsers.ParserConfigurationException;
 import java.util.List;
 import java.util.Optional;
@@ -40,7 +39,7 @@ public class MobileController extends DatableController {
 
     private List<Sensor> getSensorList() {
         return Stream.of(Location.values())
-                .map(location -> sensorRepository.findNewestSensorByLocation(location.getLocation()))
+                .map(location -> sensorRepository.findNewestSensorByLocation(location.getCords()))
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .collect(Collectors.toList());

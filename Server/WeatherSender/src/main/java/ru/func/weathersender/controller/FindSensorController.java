@@ -41,7 +41,7 @@ public class FindSensorController extends DatableController {
 
         if (Location.containsName(location)) {
             Location locationObject = Location.valueOf(location.toUpperCase());
-            reversedList = sensorRepository.findByLocation(locationObject.getLocation());
+            reversedList = sensorRepository.findByLocation(locationObject.getCords());
             Collections.reverse(reversedList);
         }
 

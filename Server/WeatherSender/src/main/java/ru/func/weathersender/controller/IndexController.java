@@ -17,7 +17,7 @@ import java.util.Locale;
 public class IndexController extends DatableController {
 
     private SimpleDateFormat dateFormat =
-            new SimpleDateFormat("dd-MM-yyyy-k-m", new Locale("ru", "RU"));
+            new SimpleDateFormat("yyyy-MM-dd-k-m", new Locale("ru", "RU"));
 
     @RequestMapping("/")
     public String index(
@@ -27,7 +27,7 @@ public class IndexController extends DatableController {
             @RequestParam(name = "temperature", required = false) Float temperature) {
         if (!location.equals("none")) {
             sensorRepository.save(Sensor.builder()
-                    .location(Location.valueOf(location).getLocation())
+                    .location(Location.valueOf(location).getCords())
                     .pressure(pressure)
                     .humidity(humidity)
                     .temperature(temperature)

@@ -7,9 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1edd682a-78ec-4b02-9014-0cae6b1e6577" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/MapsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/MapsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/release/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/MobileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/MobileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/entity/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/entity/Sensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +234,8 @@
       <workItem from="1578279828645" duration="2568000" />
       <workItem from="1578282700471" duration="176000" />
       <workItem from="1578282888440" duration="65000" />
-      <workItem from="1578283134742" duration="3328000" />
+      <workItem from="1578283134742" duration="5223000" />
+      <workItem from="1578306180184" duration="2335000" />
     </task>
     <servers />
   </component>
