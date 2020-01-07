@@ -38,7 +38,7 @@ public class IndexController extends DatableController {
                     .timestamp(dateFormat.format(new Date()))
                     .build()
             );
-            log.info("Создана новая запись с ID {}. IP отправителя {}.", sensor.getId(), request.getHeader("X-FORWARDED-FOR"));
+            log.info("Создана новая запись с ID {}. IP отправителя {}.", sensor.getId(), request.getRemoteAddr());
         }
         return "index";
     }

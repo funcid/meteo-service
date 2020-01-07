@@ -1,5 +1,6 @@
 package ru.func.weatherclient;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -30,118 +32,132 @@ import okhttp3.Response;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    public static final String DATA_MESSAGE =  "Обновление через %d сек.\n%s";
+    private static final Request REQUEST = new Request.Builder()
+            .addHeader("Accept", "application/json")
+            .url("http://func-weather.herokuapp.com/mobile")
+            .build();
     private GoogleMap mMap;
     private LatLng chosenMarker;
-    private String data = "Загрузка...", nearData = "";
+    private String nearData = "";
     private List<Marker> markerList = new ArrayList<>();
     private TextView output;
     private JSONArray json;
+    private int secondsTemp = 0;
+    private int delayUpdate = -4;
+    private String chosenData = "";
+    private boolean first = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
         output = findViewById(R.id.output);
-        output.setText(data);
+        output.setText("Загрузка...");
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng startLocation = new LatLng(55, 37);
-        markerList.add(mMap.addMarker(
-                new MarkerOptions()
-                        .position(startLocation)
-                        .title(data)
-        ));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(startLocation));
         mMap.setOnMarkerClickListener(
                 new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
                         chosenMarker = marker.getPosition();
+                        chosenData = markerList.get(markerList.indexOf(marker)).getTitle();
                         return false;
                     }
                 }
         );
 
         new Timer().schedule(new TimerTask() {
-            int secondsTemp = 0, delayUpdate = -4;
-            String chosenData = "";
-            boolean first = true;
-
             @Override
             public void run() {
-                MapsActivity.this.runOnUiThread(new Runnable() {
-                    public void run() {
-                        if (secondsTemp == delayUpdate || first) {
+                updateActivityUI();
+            }
+        }, 100, 1000);
+    }
 
-                            secondsTemp = 0;
-                            delayUpdate = delayUpdate > 30 ? delayUpdate : delayUpdate + 5;
-                            Request request = new Request.Builder()
-                                    .addHeader("Accept", "application/json")
-                                    .url("http://func-weather.herokuapp.com/mobile")
-                                    .build();
-                            new OkHttpClient().newCall(request)
-                                    .enqueue(new Callback() {
-                                        @Override
-                                        public void onFailure(final Call call, IOException e) { }
-                                        @Override
-                                        public void onResponse(Call call, final Response response) throws IOException {
-                                            try {
-                                                json = new JSONArray(response.body().string());
-                                                System.out.println(json.toString());
-                                            } catch (JSONException e) {
-                                                e.printStackTrace();
-                                            }
-                                        }
-                                    });
-                            for (Marker marker : markerList)
-                                marker.remove();
-                            try {
-                                if (json != null) {
-                                    for (int i = 0; i < json.length(); i++) {
-                                        JSONObject sensor = json.getJSONObject(i);
+    private void initJsonDataFromServer() {
+        new OkHttpClient().newCall(REQUEST)
+                .enqueue(new Callback() {
+                    @Override
+                    public void onFailure(final Call call, IOException e) {
+                        throw new RuntimeException("Cannot get data from server. " + e.getMessage());
+                    }
 
-                                        String[] cords = sensor.getString("location").split(", ");
-                                        LatLng location = new LatLng(
-                                                Float.parseFloat(cords[0]),
-                                                Float.parseFloat(cords[1])
-                                        );
-                                        nearData = sensor.getString("temperature") + " C°" +
-                                                sensor.getString("pressure") + " torr" +
-                                                sensor.getString("humidity") + "%";
-                                        if (location.equals(chosenMarker))
-                                            chosenData = nearData;
-                                        markerList.add(
-                                                mMap.addMarker(new MarkerOptions()
-                                                        .position(location)
-                                                        .title(nearData)
-                                                )
-                                        );
-                                    }
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            first = false;
+                    @Override
+                    public void onResponse(Call call, final Response response) throws IOException {
+                        try {
+                            json = new JSONArray(response.body().string());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                        secondsTemp++;
-                        output.setTextSize(21);
-                        output.setText("" +
-                                "Обновление через " +
-                                (delayUpdate - secondsTemp) +
-                                " сек.\n" +
-                                (chosenData.isEmpty() ? nearData : chosenData)
-                        );
                     }
                 });
+    }
+
+    private void updateActivityUI() {
+        MapsActivity.this.runOnUiThread(new Runnable() {
+            public void run() {
+                if (secondsTemp == delayUpdate || first) {
+                    secondsTemp = 0;
+                    delayUpdate = delayUpdate > 30 ? delayUpdate : delayUpdate + 5;
+                    for (Marker marker : markerList)
+                        marker.remove();
+                    try {
+                        initJsonDataFromServer();
+                        if (json != null) {
+                            parseJsonArrayData();
+                        }
+                    } catch (JSONException | RuntimeException e) {
+                        e.printStackTrace();
+                    }
+                    first = false;
+                }
+                updateOutputData();
+                secondsTemp++;
             }
-        }, 0, 1000);
+        });
+    }
+
+    private void parseJsonArrayData() throws JSONException {
+        for (int i = 0; i < json.length(); i++) {
+            JSONObject sensor = json.getJSONObject(i);
+
+            String[] cords = sensor.getString("location").split(", ");
+            LatLng location = new LatLng(
+                    Float.parseFloat(cords[0]),
+                    Float.parseFloat(cords[1])
+            );
+            nearData = sensor.getString("temperature") + "C° " +
+                    sensor.getString("pressure") + "torr " +
+                    sensor.getString("humidity") + "%";
+            if (location.equals(chosenMarker)) {
+                chosenData = nearData;
+            }
+            markerList.add(
+                    mMap.addMarker(new MarkerOptions()
+                            .position(location)
+                            .title(nearData)
+                    )
+            );
+        }
+    }
+
+    private void updateOutputData() {
+        output.setTextSize(21);
+        output.setText(String.format(
+                Locale.US,
+                DATA_MESSAGE,
+                delayUpdate - secondsTemp - 1,
+                chosenData.isEmpty() ? nearData : chosenData
+        ));
     }
 }

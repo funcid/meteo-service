@@ -52,15 +52,15 @@ public class XmlSensorParser implements SensorDataParser {
         });
 
         try {
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            DataOutputStream dataOutputStream = new DataOutputStream(baos);
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
 
             Transformer transformer = buildTransformer();
             transformer.transform(new DOMSource(document), new StreamResult(dataOutputStream));
 
             dataOutputStream.flush();
 
-            return baos.toString(StandardCharsets.UTF_8.name());
+            return outputStream.toString(StandardCharsets.UTF_8.name());
         } catch (TransformerException | IOException e) {
             e.printStackTrace();
             return null;
