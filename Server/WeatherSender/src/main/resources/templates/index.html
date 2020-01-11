@@ -21,6 +21,12 @@
 </nav>
 
 <div class="container">
+    <form name="signIn" method="post" action="/registration">
+        <button type="submit" class="btn btn-primary">Регистрация</button>
+    </form>
+    <form name="auth" method="post" action="/login">
+        <button type="submit" class="btn btn-primary">Авторизация</button>
+    </form>
     <br>
     <form name="findSensorById" method="post" action="/findSensorById">
         <div class="form-group">
@@ -36,7 +42,7 @@
             <label for="location">
                 Где находится датчик?
             </label>
-            <input placeholder="Sviblovo, Test" type="text" class="form-control" id="location" name="location">
+            <input placeholder="Sviblovo, Center" type="text" class="form-control" id="location" name="location">
         </div>
         <button type="submit" class="btn btn-primary">Найти</button>
     </form>

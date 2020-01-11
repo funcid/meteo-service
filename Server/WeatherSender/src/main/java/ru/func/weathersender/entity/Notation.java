@@ -12,12 +12,12 @@ import javax.persistence.*;
  * @author func 21.12.2019
  */
 @Entity
-@Table(name = "sensors")
+@Table(name = "notations")
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-public class Sensor {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Notation {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
@@ -33,4 +33,8 @@ public class Sensor {
     private Float pressure;
     @Column(nullable = false)
     private Float humidity;
+    @Column(nullable = false)
+    private String addition;
+    @Column(nullable = false)
+    private String author;
 }

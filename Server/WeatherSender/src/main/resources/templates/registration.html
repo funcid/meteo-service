@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MeteoService</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <span class="navbar-brand mb-0 h1">
+            <img src="/assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            MeteoService
+        </span>
+        <a class="navbar-text" href="https://github.com/funcid/MeteoService" target="_blank">
+            <img src="/assets/github.svg" width="24" height="24" class="d-inline-block align-top"
+                 alt="GitHub repository">
+            Source code
+        </a>
+    </div>
+</nav>
+
+<div class="container">
+    <br>
+    <form name="registration" method="post" action="/registration">
+        <div class="form-group">
+            Регистрация
+            </br>
+            <label for="login">
+                <input placeholder="Логин" type="text" class="form-control" id="login" name="login">
+            </label>
+            </br>
+            <label for="password">
+                <input placeholder="Пароль" type="text" class="form-control" id="password" name="password">
+            </label>
+            </br>
+            <label for="mail">
+                <input placeholder="Mail@Mail.com" type="text" class="form-control" id="mail" name="mail">
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    </form>
+</div>
+</br>
+</br>
+<footer size="1" class="footer" align="center" style="background-color: #eee; vertical-align: bottom;">
+    <a href="http://funcid.ru">
+        Сайт автора
+    </a>
+    </br>
+    <a href="https://github.com/funcid/MeteoService/blob/master/LICENSE">
+        Copyright (c) 2019 funcid
+    </a>
+</footer>
+</body>
+</html>
