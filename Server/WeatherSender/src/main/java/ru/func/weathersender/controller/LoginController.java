@@ -2,12 +2,14 @@ package ru.func.weathersender.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.func.weathersender.service.UserService;
+import ru.func.weathersender.entity.User;
+import ru.func.weathersender.repository.UserRepository;
+
+import java.util.Optional;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -19,7 +21,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class LoginController {
 
     @Autowired
-    private UserService userService;
+    private UserRepository userRepository;
 
     @GetMapping("/login")
     public String login() {
@@ -31,8 +33,9 @@ public class LoginController {
             @RequestParam String login,
             @RequestParam String password
     ) {
-        UserDetails user = userService.loadUserByUsername(login);
-        if (user.getPassword().equals(password)) {
+        Optional<User> user = userRepository.findByLogin(login);
+
+        if (user.isPresent() && user.get().getPassword().equals(password)) {
             log.info("{} успешно авторизовался.", login);
             return "redirect:/sensors";
         }

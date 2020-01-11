@@ -11,6 +11,10 @@
         <span class="navbar-brand mb-0 h1">
             <img src="/assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
             MeteoService
+                <button type="submit" onclick="window.location.href='registration'"
+                        class="btn btn-primary">Регистрация</button>
+                <button type="submit" onclick="window.location.href='login'"
+                        class="btn btn-primary">Авторизация</button>
         </span>
         <a class="navbar-text" href="https://github.com/funcid/MeteoService" target="_blank">
             <img src="/assets/github.svg" width="24" height="24" class="d-inline-block align-top"
@@ -21,12 +25,6 @@
 </nav>
 
 <div class="container">
-    <form name="signIn" method="post" action="/registration">
-        <button type="submit" class="btn btn-primary">Регистрация</button>
-    </form>
-    <form name="auth" method="post" action="/login">
-        <button type="submit" class="btn btn-primary">Авторизация</button>
-    </form>
     <br>
     <form name="findSensorById" method="post" action="/findSensorById">
         <div class="form-group">

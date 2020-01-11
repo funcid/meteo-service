@@ -2,9 +2,6 @@ package ru.func.weathersender.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import ru.func.weathersender.entity.User;
@@ -19,7 +16,7 @@ import java.util.UUID;
  */
 @Slf4j
 @Service
-public class UserService implements UserDetailsService {
+public class UserService {
     private Random random = new Random();
 
     @Autowired
@@ -27,11 +24,6 @@ public class UserService implements UserDetailsService {
 
     @Autowired
     private MailSender mailSender;
-
-    @Override
-    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-        return userRepository.findByLogin(login).orElse(null);
-    }
 
     public boolean addUser(User user) {
         Optional<User> userFromDb = userRepository.findByLogin(user.getLogin());
@@ -43,14 +35,14 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
 
         if (!StringUtils.isEmpty(user.getMail())) {
-            log.info("{} было отправленно письмо.", user.getUsername());
+            log.info("{} было отправленно письмо.", user.getLogin());
             String message = String.format(
                     "Здравствуйте, %s! \n" +
                             "Что бы завершить регистрацию WeatherService перейдите по ссылке:\n" +
                             "https://func-weather.herokuapp.com/activate/%s\n" +
                             "Спасибо за использование нашего сервиса!\n" +
                             "%d",
-                    user.getUsername(),
+                    user.getLogin(),
                     user.getActivationCode(),
                     random.nextInt(9000)+1000
             );
