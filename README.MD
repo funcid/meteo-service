@@ -1,15 +1,13 @@
 <h1 align=center>MeteoService</h1>
 
-##Описание
-
+<h2>Описание</h2>
 Датчик, собирающий данные (температура, давление, влажность), отправляет их GET запросом
 на вебсервер, сервер в свою очередь запоминает данные, откуда они пришли и когда, в базу данных
 MySQL, затем мобильное приложение запрашивает у сервера информацию, сервис отправляет в ответ набор 
 данных в формате JSON, в конце концов мобильное приложение выводит отформатированные данные на 
 красивой карте карте с маркерами. 
 
-##Как посмотреть
-
+<h2>Как посмотреть</h2>
 + Серверная часть (Java Spring Boot)
 	- <a href="https://func-weather.herokuapp.com">Перейти на вебсервер.</a>
 + Клиент (Android Java Application)
@@ -17,31 +15,29 @@ MySQL, затем мобильное приложение запрашивает
 + Аппаратная составляющая (Arduino Firmware)
 	- <a href="https://github.com/funcid/MeteoService/tree/master/SensorFirmware">Пример сборки и прошивка. </a>
 
-##Технологии
-
+<h2>Технологии</h2>
 Java 8, C++, Spring Boot, Slf4j, Gradle, Maven, Git, MySQL, Arduino, Google Maps API, Servlet, REST.
 
-##Сборка и запуск сервера
-    ```shell
-    mvn clean package
-    java -jar WeatherSender-1.0-SNAPSHOT.jar
-    ```
+<h2>Сборка и запуск сервера</h2>
+```shell
+mvn clean package
+java -jar WeatherSender-1.0-SNAPSHOT.jar
+```
 По-умолчанию, сервер запустится по адресу `localhost` на порту `8080`.  
 Для изменения этих значений, нужно указать новые значения
 в файле `/src/main/resources/application.properties`:
 
-    ```properties
-    server.address=localhost
-    server.port=8080
-    ```
+```properties
+server.address=localhost
+server.port=8080
+```
     
-##Как помочь проекту
-
+<h2>Как помочь проекту</h2>
 Свяжитесь со мной.
 + <a href="https://vk.com/funcid">VK.COM</a>
 + <a href="http://funcid.ru">Личный сайт</a>
 
-##Лицензия
+<h2>Лицензия</h2>
 MIT License
 
 Copyright (c) 2019 funcid

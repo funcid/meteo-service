@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.func.weathersender.entity.Sensor;
+import ru.func.weathersender.entity.Notation;
 import ru.func.weathersender.util.Location;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +30,7 @@ public class IndexController extends DatableController {
             @RequestParam(name = "temperature", required = false) Float temperature,
             HttpServletRequest request) {
         if (!location.equals("none")) {
-            Sensor sensor = sensorRepository.save(Sensor.builder()
+            Notation notation = notationRepository.save(Notation.builder()
                     .location(Location.valueOf(location).getCords())
                     .pressure(pressure)
                     .humidity(humidity)
@@ -38,7 +38,7 @@ public class IndexController extends DatableController {
                     .timestamp(dateFormat.format(new Date()))
                     .build()
             );
-            log.info("Создана новая запись с ID {}. IP отправителя {}.", sensor.getId(), request.getRemoteAddr());
+            log.info("Создана новая запись с ID {}. IP отправителя {}.", notation.getId(), request.getRemoteAddr());
         }
         return "index";
     }

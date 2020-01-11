@@ -2,7 +2,7 @@ package ru.func.weathersender.parser;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import ru.func.weathersender.entity.Sensor;
+import ru.func.weathersender.entity.Notation;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -19,12 +19,12 @@ import java.util.List;
 /**
  * @author func 06.01.2020
  */
-public class XmlSensorParser implements SensorDataParser {
+public class XmlNotationParser implements NotationDataParser {
 
     private DocumentBuilder documentBuilder;
     private Document document;
 
-    public XmlSensorParser() throws ParserConfigurationException {
+    public XmlNotationParser() throws ParserConfigurationException {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         documentBuilderFactory.setValidating(false);
 
@@ -32,21 +32,21 @@ public class XmlSensorParser implements SensorDataParser {
     }
 
     @Override
-    public String parseSensorToFormat(List<Sensor> sensors) {
+    public String parseNotationToFormat(List<Notation> notations) {
         document = documentBuilder.newDocument();
 
         Element rootElement = document.createElement("data");
 
         document.appendChild(rootElement);
 
-        sensors.forEach(sensor -> {
+        notations.forEach(notation -> {
             Element contentElement = document.createElement("sensor");
             createAndAddData(
                     contentElement,
-                    sensor.getLocation(),
-                    sensor.getTemperature().toString(),
-                    sensor.getPressure().toString(),
-                    sensor.getHumidity().toString()
+                    notation.getLocation(),
+                    notation.getTemperature().toString(),
+                    notation.getPressure().toString(),
+                    notation.getHumidity().toString()
             );
             rootElement.appendChild(contentElement);
         });

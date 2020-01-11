@@ -32,11 +32,12 @@ import okhttp3.Response;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    public static final String DATA_MESSAGE =  "Обновление через %d сек.\n%s";
+    public static final String DATA_MESSAGE = "Обновление через %d сек.\n%s";
     private static final Request REQUEST = new Request.Builder()
             .addHeader("Accept", "application/json")
             .url("http://func-weather.herokuapp.com/mobile")
             .build();
+
     private GoogleMap mMap;
     private LatLng chosenMarker;
     private String nearData = "";
@@ -85,22 +86,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void initJsonDataFromServer() {
-        new OkHttpClient().newCall(REQUEST)
-                .enqueue(new Callback() {
-                    @Override
-                    public void onFailure(final Call call, IOException e) {
-                        throw new RuntimeException("Cannot get data from server. " + e.getMessage());
-                    }
+        new OkHttpClient().newCall(REQUEST).enqueue(new Callback() {
+            @Override
+            public void onFailure(final Call call, IOException e) {
+                throw new RuntimeException("Cannot get data from server. " + e.getMessage());
+            }
 
-                    @Override
-                    public void onResponse(Call call, final Response response) throws IOException {
-                        try {
-                            json = new JSONArray(response.body().string());
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
+            @Override
+            public void onResponse(Call call, final Response response) throws IOException {
+                try {
+                    json = new JSONArray(response.body().string());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     private void updateActivityUI() {
@@ -136,9 +136,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Float.parseFloat(cords[0]),
                     Float.parseFloat(cords[1])
             );
-            nearData = sensor.getString("temperature") + "C° " +
-                    sensor.getString("pressure") + "torr " +
-                    sensor.getString("humidity") + "%";
+            nearData = String.format(
+                    Locale.ENGLISH,
+                    "%sC° %storr %s",
+                    sensor.getString("temperature"),
+                    sensor.getString("pressure"),
+                    sensor.getString("humidity")
+            ) + "%";
             if (location.equals(chosenMarker)) {
                 chosenData = nearData;
             }
