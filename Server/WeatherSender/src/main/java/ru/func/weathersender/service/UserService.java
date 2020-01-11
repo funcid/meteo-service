@@ -46,7 +46,7 @@ public class UserService implements UserDetailsService {
             log.info("{} было отправленно письмо.", user.getUsername());
             String message = String.format(
                     "Здравствуйте, %s! \n" +
-                            "Что бы завершить регистрауию WeatherService перейдите по ссылке:\n" +
+                            "Что бы завершить регистрацию WeatherService перейдите по ссылке:\n" +
                             "https://func-weather.herokuapp.com/activate/%s\n" +
                             "Спасибо за использование нашего сервиса!\n" +
                             "%d",
