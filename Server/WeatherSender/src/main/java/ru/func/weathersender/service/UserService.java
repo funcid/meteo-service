@@ -11,6 +11,7 @@ import ru.func.weathersender.entity.User;
 import ru.func.weathersender.repository.UserRepository;
 
 import java.util.Optional;
+import java.util.Random;
 import java.util.UUID;
 
 /**
@@ -19,6 +20,8 @@ import java.util.UUID;
 @Slf4j
 @Service
 public class UserService implements UserDetailsService {
+    private Random random = new Random();
+
     @Autowired
     private UserRepository userRepository;
 
@@ -32,24 +35,27 @@ public class UserService implements UserDetailsService {
 
     public boolean addUser(User user) {
         Optional<User> userFromDb = userRepository.findByLogin(user.getLogin());
-        userFromDb.ifPresent(dbUser -> {
-            dbUser.setActivated(true);
-            dbUser.setActivationCode(UUID.randomUUID().toString());
+        if (userFromDb.isPresent())
+            return false;
+        user.setActivated(true);
+        user.setActivationCode(UUID.randomUUID().toString());
 
-            userRepository.save(dbUser);
-        });
-
+        userRepository.save(user);
 
         if (!StringUtils.isEmpty(user.getMail())) {
             log.info("{} было отправленно письмо.", user.getUsername());
             String message = String.format(
                     "Здравствуйте, %s! \n" +
-                            "Что бы завершить регистрауию WeatherService перейдите по ссылке: https://func-weather.herokuapp.com/activate/%s",
+                            "Что бы завершить регистрауию WeatherService перейдите по ссылке:\n" +
+                            "https://func-weather.herokuapp.com/activate/%s\n" +
+                            "Спасибо за использование нашего сервиса!\n" +
+                            "%d",
                     user.getUsername(),
-                    user.getActivationCode()
+                    user.getActivationCode(),
+                    random.nextInt(9000)+1000
             );
 
-            mailSender.send(user.getMail(), "Activation code", message);
+            mailSender.send(user.getMail(), "MeteoService подтвердите аккаунт", message);
         }
 
         return true;

@@ -1,11 +1,13 @@
 package ru.func.weathersender.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import ru.func.weathersender.entity.Notation;
+import ru.func.weathersender.repository.NotationRepository;
 import ru.func.weathersender.util.Location;
 
 import java.util.ArrayList;
@@ -20,7 +22,10 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
  */
 @Slf4j
 @Controller
-public class FindNotationController extends DatableController {
+public class FindNotationController {
+
+    @Autowired
+    protected NotationRepository notationRepository;
 
     @RequestMapping(path = "/findSensorById", method = POST)
     public ModelAndView findNotationById(@RequestParam Integer id) {
