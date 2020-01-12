@@ -1,9 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>MeteoService</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <style>
+        .gradientText {
+            color: transparent;
+            background-image: linear-gradient(
+                    to right,
+                    #fff8f6,
+                    #83e3ee,
+                    #fff8f6,
+                    #83e3ee,
+                    #fff8f6
+            );
+            -webkit-background-clip: text;
+            animation: gradientText 4s linear infinite;
+            background-size: 1000%;
+        }
+
+        @keyframes gradientText {
+            0% {
+                background-position: 100%;
+            }
+            50% {
+                background-position: 0;
+            }
+            100% {
+                background-position: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
@@ -22,7 +50,7 @@
 
 <div class="container">
     <br>
-    <form name="registration" method="post" action="/registration">
+    <form name="registration" method="post" action="/registration" align="center">
         <div class="form-group">
             Регистрация
             </br>
@@ -36,19 +64,20 @@
             </br>
             <label for="mail">
                 <input placeholder="Mail@Mail.com" type="text" class="form-control" id="mail" name="mail">
-            </label>
+            </label><br>
+            <span th:text="${message}">[MESSAGE]</span>
+            <br><br><br>
         </div>
         <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
     </form>
 </div>
-</br>
-</br>
-<footer size="1" class="footer" align="center" style="background-color: #eee; vertical-align: bottom;">
-    <a href="http://funcid.ru">
+<footer size="1" align="center"
+        style="position: fixed;left: 0; bottom: 0;width: 100%;background-color: #5a6268;">
+    <a class="gradientText" href="http://funcid.ru">
         Сайт автора
     </a>
     </br>
-    <a href="https://github.com/funcid/MeteoService/blob/master/LICENSE">
+    <a class="gradientText" href="https://github.com/funcid/MeteoService/blob/master/LICENSE">
         Copyright (c) 2019 funcid
     </a>
 </footer>

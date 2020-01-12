@@ -1,12 +1,10 @@
 package ru.func.weathersender.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import ru.func.weathersender.service.UserService;
 
 /**
  * @author func 11.01.2020
@@ -15,14 +13,16 @@ import ru.func.weathersender.service.UserService;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private UserService userService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/registration", "/static/**", "/activate/*", "/mobile").permitAll()
+                .antMatchers(
+                        "/", "/registration", "/static/**",
+                        "/activate/*", "/mobile", "/findSensorById",
+                        "/findSensorsByLocation", "/findSensorsByTimestamp"
+                        ).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

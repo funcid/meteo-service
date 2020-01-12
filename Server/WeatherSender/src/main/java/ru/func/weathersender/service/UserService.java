@@ -2,6 +2,7 @@ package ru.func.weathersender.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import ru.func.weathersender.entity.User;
@@ -17,7 +18,16 @@ import java.util.UUID;
 @Slf4j
 @Service
 public class UserService {
-    private Random random = new Random();
+
+    @Value("${spring.config.name}")
+    private String projectName;
+
+    private static final Random RANDOM = new Random();
+    private static final String EMAIL_MESSAGE = "Здравствуйте, %s! \n" +
+            "Что бы завершить регистрацию %s перейдите по ссылке:\n" +
+            "https://func-weather.herokuapp.com/activate/%s\n" +
+            "Спасибо за использование нашего сервиса!\n" +
+            "%d";
 
     @Autowired
     private UserRepository userRepository;
@@ -29,27 +39,21 @@ public class UserService {
         Optional<User> userFromDb = userRepository.findByLogin(user.getLogin());
         if (userFromDb.isPresent())
             return false;
-        user.setActivated(true);
+        user.setActivated(false);
         user.setActivationCode(UUID.randomUUID().toString());
 
         userRepository.save(user);
 
         if (!StringUtils.isEmpty(user.getMail())) {
             log.info("{} было отправленно письмо.", user.getLogin());
-            String message = String.format(
-                    "Здравствуйте, %s! \n" +
-                            "Что бы завершить регистрацию WeatherService перейдите по ссылке:\n" +
-                            "https://func-weather.herokuapp.com/activate/%s\n" +
-                            "Спасибо за использование нашего сервиса!\n" +
-                            "%d",
+            String message = String.format(EMAIL_MESSAGE,
                     user.getLogin(),
+                    projectName,
                     user.getActivationCode(),
-                    random.nextInt(9000)+1000
+                    RANDOM.nextInt(9000) + 1000
             );
-
-            mailSender.send(user.getMail(), "MeteoService подтвердите аккаунт", message);
+            mailSender.send(user.getMail(), projectName + " подтвердите аккаунт", message);
         }
-
         return true;
     }
 
@@ -59,6 +63,7 @@ public class UserService {
             return false;
         user.ifPresent(dbUser -> {
             dbUser.setActivationCode(null);
+            dbUser.setActivated(true);
             userRepository.save(dbUser);
         });
         return true;
