@@ -3,6 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>MeteoService</title>
+    <style>
+        .gradientText {
+            color: transparent;
+            background-image: linear-gradient(
+                    to right,
+                    #fff8f6,
+                    #8d8d8d,
+                    #fff8f6,
+                    #8d8d8d,
+                    #fff8f6
+            );
+            -webkit-background-clip: text;
+            animation: gradientText 4s linear infinite;
+            background-size: 1000%;
+        }
+
+        @keyframes gradientText {
+            0% {
+                background-position: 100%;
+            }
+            50% {
+                background-position: 0;
+            }
+            100% {
+                background-position: 100%;
+            }
+        }
+    </style>
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 </head>
 <body>
@@ -11,6 +39,10 @@
         <span class="navbar-brand mb-0 h1">
             <img src="/assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
             MeteoService
+                <button type="submit" onclick="window.location.href='registration'"
+                        class="btn btn-primary">Регистрация</button>
+                <button type="submit" onclick="window.location.href='login'"
+                        class="btn btn-primary">Авторизация</button>
         </span>
         <a class="navbar-text" href="https://github.com/funcid/MeteoService" target="_blank">
             <img src="/assets/github.svg" width="24" height="24" class="d-inline-block align-top"
@@ -21,12 +53,6 @@
 </nav>
 
 <div class="container">
-    <form name="signIn" method="post" action="/registration">
-        <button type="submit" class="btn btn-primary">Регистрация</button>
-    </form>
-    <form name="auth" method="post" action="/login">
-        <button type="submit" class="btn btn-primary">Авторизация</button>
-    </form>
     <br>
     <form name="findSensorById" method="post" action="/findSensorById">
         <div class="form-group">
@@ -55,17 +81,16 @@
         </div>
         <button type="submit" class="btn btn-primary">Найти</button>
     </form>
+    <footer size="1" align="center"
+            style="position: fixed;left: 0; bottom: 0;width: 100%;background-color: #5a6268;">
+        <a class="gradientText" href="http://funcid.ru">
+            Сайт автора
+        </a>
+        </br>
+        <a class="gradientText" href="https://github.com/funcid/MeteoService/blob/master/LICENSE">
+            Copyright (c) 2019 funcid
+        </a>
+    </footer>
 </div>
-</br>
-</br>
-<footer size="1" class="footer" align="center" style="background-color: #eee; vertical-align: bottom;">
-    <a href="http://funcid.ru">
-        Сайт автора
-    </a>
-    </br>
-    <a href="https://github.com/funcid/MeteoService/blob/master/LICENSE">
-        Copyright (c) 2019 funcid
-    </a>
-</footer>
 </body>
 </html>
