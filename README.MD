@@ -8,21 +8,23 @@ MySQL, затем мобильное приложение запрашивает
 красивой карте карте с маркерами. 
 
 <h2>Как посмотреть</h2>
-+ Серверная часть (Java Spring Boot)
-	- <a href="https://func-weather.herokuapp.com">Перейти на вебсервер.</a>
-+ Клиент (Android Java Application)
-	- <a href="https://play.google.com/store/apps/details?id=ru.func.weatherclient">Установить мобильный клиет в Google Play.</a>
-+ Аппаратная составляющая (Arduino Firmware)
-	- <a href="https://github.com/funcid/MeteoService/tree/master/SensorFirmware">Пример сборки и прошивка. </a>
+Серверная часть (Java Spring Boot)
+<a href="https://func-weather.herokuapp.com">Перейти на вебсервер.</a>
+Клиент (Android Java Application)
+<a href="https://play.google.com/store/apps/details?id=ru.func.weatherclient">Установить мобильный клиет в Google Play.</a>
+Аппаратная составляющая (Arduino Firmware)
+<a href="https://github.com/funcid/MeteoService/tree/master/SensorFirmware">Пример сборки и прошивка. </a>
 
 <h2>Технологии</h2>
 Java 8, C++, Spring Boot, Slf4j, Gradle, Maven, Git, MySQL, Arduino, Google Maps API, Servlet, REST.
 
 <h2>Сборка и запуск сервера</h2>
+
 ```shell
 mvn clean package
 java -jar WeatherSender-1.0-SNAPSHOT.jar
 ```
+
 По-умолчанию, сервер запустится по адресу `localhost` на порту `8080`.  
 Для изменения этих значений, нужно указать новые значения
 в файле `/src/main/resources/application.properties`:
@@ -32,10 +34,9 @@ server.address=localhost
 server.port=8080
 ```
     
-<h2>Как помочь проекту</h2>
-Свяжитесь со мной.
-+ <a href="https://vk.com/funcid">VK.COM</a>
-+ <a href="http://funcid.ru">Личный сайт</a>
+<h2>Как со мной связаться</h2>
+<a href="https://vk.com/funcid">VK.COM</a>
+<a href="http://funcid.ru">Личный сайт</a>
 
 <h2>Лицензия</h2>
 MIT License
