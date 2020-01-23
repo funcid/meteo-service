@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -32,7 +33,8 @@ public class FindNotationController {
         ModelAndView modelAndView = new ModelAndView("findSensorById");
         modelAndView.addObject("id", id);
 
-        Optional<Notation> notationObject = notationRepository.findById(id);
+        Optional<Notation> notationObject = notationRepository.findById(id)
+                .filter(Notation::getIsPublic);
         notationObject.ifPresent(sensor -> modelAndView.addObject("sensor", sensor));
 
         log.info(
@@ -53,7 +55,9 @@ public class FindNotationController {
 
         if (Location.containsName(location)) {
             Location locationObject = Location.valueOf(location.toUpperCase());
-            reversedList = notationRepository.findByLocation(locationObject.getCords());
+            reversedList = notationRepository.findByLocation(locationObject.getCords()).stream()
+                    .filter(Notation::getIsPublic)
+                    .collect(Collectors.toList());
             Collections.reverse(reversedList);
         }
 
@@ -72,7 +76,9 @@ public class FindNotationController {
         ModelAndView modelAndView = new ModelAndView("findSensorsByTimestamp");
         modelAndView.addObject("timestamp", timestamp);
 
-        List<Notation> list = notationRepository.findByTimestamp(timestamp);
+        List<Notation> list = notationRepository.findByTimestamp(timestamp).stream()
+                .filter(Notation::getIsPublic)
+                .collect(Collectors.toList());
 
         modelAndView.addObject("sensors", list);
 

@@ -7,11 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1edd682a-78ec-4b02-9014-0cae6b1e6577" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/FindNotationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/FindNotationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/findSensorsByTimestamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/findSensorsByTimestamp.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -245,7 +247,11 @@
       <workItem from="1578746300185" duration="8941000" />
       <workItem from="1578812320386" duration="12764000" />
       <workItem from="1579203742972" duration="25000" />
-      <workItem from="1579289106457" duration="4318000" />
+      <workItem from="1579289106457" duration="9465000" />
+      <workItem from="1579359715055" duration="14000" />
+      <workItem from="1579361889687" duration="1264000" />
+      <workItem from="1579621288545" duration="814000" />
+      <workItem from="1579793442752" duration="6666000" />
     </task>
     <servers />
   </component>
