@@ -1,13 +1,5 @@
 <h1 align=center>MeteoService</h1>
 
-Сервисная часть (Java Servlet Server)</br>
-	- Активная версия: https://func-weather.herokuapp.com </br>
-	
-Аппаратная составляющая (Arduino Firmware) </br>
-	- Пример сборки и прошивка находятся в одноименном каталоге </br>
-	
-Клиент (Android Java Application) </br>
-	- Активная версия: https://play.google.com/store/apps/details?id=ru.func.weatherclient </br>
 <h2>Описание</h2>
 Датчик, собирающий данные (температура, давление, влажность), отправляет их GET запросом
 на вебсервер, сервер в свою очередь запоминает данные, откуда они пришли и когда, в базу данных
