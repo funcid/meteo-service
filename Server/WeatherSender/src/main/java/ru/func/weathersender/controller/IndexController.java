@@ -42,6 +42,7 @@ public class IndexController {
             @RequestParam(name = "addition", required = false, defaultValue = "no addition") String addition,
             @RequestParam(name = "login", required = false) String login,
             @RequestParam(name = "password", required = false) String password,
+            @RequestParam(name = "isPublic", required = false) String isPublic,
             HttpServletRequest request) {
         if (!location.equals("none") && !Strings.isEmpty(login)) {
             Optional<User> user = userRepository.findByLogin(login);
@@ -54,7 +55,7 @@ public class IndexController {
                         .timestamp(dateFormat.format(new Date()))
                         .addition(addition)
                         .author(login)
-                        .isPublic(false)
+                        .isPublic(Boolean.getBoolean(isPublic))
                         .build()
                 );
                 log.info("Создана новая запись с ID {}. IP отправителя {}.", notation.getId(), request.getRemoteAddr());
