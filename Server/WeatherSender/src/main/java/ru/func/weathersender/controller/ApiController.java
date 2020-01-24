@@ -10,13 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.func.weathersender.entity.Notation;
 import ru.func.weathersender.repository.NotationRepository;
-import ru.func.weathersender.util.Location;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author func 23.01.2020
@@ -60,15 +57,6 @@ public class ApiController {
     public List<Notation> sendDataByTimestamp(HttpServletRequest request, @RequestParam String timestamp) {
         log.info(LOGGER_OUTPUT_MESSAGE, "JSON", request.getRemoteAddr());
         return notationRepository.findByTimestamp(timestamp).stream()
-                .filter(Notation::getIsPublic)
-                .collect(Collectors.toList());
-    }
-
-    private List<Notation> getNotificationList() {
-        return Stream.of(Location.values())
-                .map(location -> notationRepository.findNewestNotationByLocation(location.getCords()))
-                .filter(Optional::isPresent)
-                .map(Optional::get)
                 .filter(Notation::getIsPublic)
                 .collect(Collectors.toList());
     }
