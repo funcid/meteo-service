@@ -7,11 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f4bab60-1cd8-4104-ac34-ec80fb7670a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../MeteoApi/src/main/java/ru/func/meteoapi/MeteoApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../MeteoApi/src/main/java/ru/func/meteoapi/MeteoApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/ApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/MobileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/MobileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/NotationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/NotationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/DataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/UserService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

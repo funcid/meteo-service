@@ -20,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(
                         "/", "/registration", "/static/**", "/assets/*", "/api/*",
-                        "/activate/*", "/mobile", "/findSensorById", "/assets/css/*",
+                        "/activate/*", "/mobile/*", "/findSensorById", "/assets/css/*",
                         "/findSensorsByLocation", "/findSensorsByTimestamp", "/sensors"
                         ).permitAll()
                 .anyRequest().authenticated()

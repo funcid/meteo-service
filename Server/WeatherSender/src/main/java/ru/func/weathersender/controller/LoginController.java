@@ -6,10 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.func.weathersender.entity.User;
-import ru.func.weathersender.repository.UserRepository;
-
-import java.util.Optional;
+import ru.func.weathersender.service.UserService;
 
 /**
  * @author func 11.01.2020
@@ -19,7 +16,7 @@ import java.util.Optional;
 public class LoginController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @GetMapping("/login")
     public String login() {
@@ -31,9 +28,7 @@ public class LoginController {
             @RequestParam String login,
             @RequestParam String password
     ) {
-        Optional<User> user = userRepository.findByLogin(login);
-        log.info(user.isPresent() + "");
-        if (user.isPresent() && user.get().getPassword().equals(password)) {
+        if (userService.successfulLogin(login, password)) {
             log.info("{} успешно авторизовался.", login);
             return "sensors";
         }

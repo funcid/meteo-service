@@ -20,11 +20,36 @@ public class DataService {
     @Autowired
     protected NotationRepository notationRepository;
 
-    public List<Notation> getNotificationList(boolean isPublic) {
+    public List<Notation> getNewNotificationList(boolean isPublic) {
         return Stream.of(Location.values())
                 .map(location -> notationRepository.findNewestNotationByLocation(location.getCords(), isPublic))
                 .filter(Optional::isPresent)
                 .map(Optional::get)
+                .collect(Collectors.toList());
+    }
+
+    public List<Notation> getNewNotificationListByAuthor(String author) {
+        return Stream.of(Location.values())
+                .map(location -> notationRepository.findNewestNotationByAuthor(author))
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .collect(Collectors.toList());
+    }
+
+    public Optional<Notation> getNotationById(int id, boolean isPublic) {
+        return notationRepository.findById(id)
+                .filter(notation -> notation.getIsPublic() == isPublic);
+    }
+
+    public List<Notation> getNotationsByLocation(String location, boolean isPublic) {
+        return notationRepository.findByLocationAndIsPublic(location, isPublic).stream()
+                .filter(Notation::getIsPublic)
+                .collect(Collectors.toList());
+    }
+
+    public List<Notation> getNotationsByTimestamp(String timestamp, boolean isPublic) {
+        return notationRepository.findByTimestampAndIsPublic(timestamp, isPublic).stream()
+                .filter(Notation::getIsPublic)
                 .collect(Collectors.toList());
     }
 }
