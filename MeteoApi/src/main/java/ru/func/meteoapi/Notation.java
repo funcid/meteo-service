@@ -8,7 +8,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Notation {
+public final class Notation {
     private Integer id;
     private String location;
     private String timestamp;

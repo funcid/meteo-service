@@ -34,7 +34,7 @@ public class ApiController {
     @GetMapping(
             headers = HttpHeaders.ACCEPT + "=" + MediaType.APPLICATION_JSON_VALUE,
             produces = APPLICATION_JSON_VALUE_UTF8,
-            path = "/byId")
+            path = "/api/byId")
     public Notation sendDataById(HttpServletRequest request, @RequestParam int id) {
         log.info(LOGGER_OUTPUT_MESSAGE, "JSON", request.getRemoteAddr());
         return notationRepository.findById(id)
@@ -45,7 +45,7 @@ public class ApiController {
     @GetMapping(
             headers = HttpHeaders.ACCEPT + "=" + MediaType.APPLICATION_JSON_VALUE,
             produces = APPLICATION_JSON_VALUE_UTF8,
-            path = "/byLocation")
+            path = "/api/byLocation")
     public List<Notation> sendDataById(HttpServletRequest request, @RequestParam String location) {
         log.info(LOGGER_OUTPUT_MESSAGE, "JSON", request.getRemoteAddr());
         return notationRepository.findByLocation(location).stream()
@@ -56,7 +56,7 @@ public class ApiController {
     @RequestMapping(
             headers = HttpHeaders.ACCEPT + "=" + MediaType.APPLICATION_JSON_VALUE,
             produces = APPLICATION_JSON_VALUE_UTF8,
-            path = "/byTimestamp")
+            path = "/api/byTimestamp")
     public List<Notation> sendDataByTimestamp(HttpServletRequest request, @RequestParam String timestamp) {
         log.info(LOGGER_OUTPUT_MESSAGE, "JSON", request.getRemoteAddr());
         return notationRepository.findByTimestamp(timestamp).stream()

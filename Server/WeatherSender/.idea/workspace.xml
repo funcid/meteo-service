@@ -6,7 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1edd682a-78ec-4b02-9014-0cae6b1e6577" name="Default Changelist" comment="" />
+    <list default="true" id="5f4bab60-1cd8-4104-ac34-ec80fb7670a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../MeteoApi/src/main/java/ru/func/meteoapi/MeteoApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../MeteoApi/src/main/java/ru/func/meteoapi/MeteoApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MeteoApi/src/main/java/ru/func/meteoapi/Notation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../MeteoApi/src/main/java/ru/func/meteoapi/Notation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MeteoApi/src/main/java/ru/func/meteoapi/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../MeteoApi/src/main/java/ru/func/meteoapi/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/ApiController.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +36,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="WeatherSender" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -69,7 +73,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MeteoApi" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15429688" />

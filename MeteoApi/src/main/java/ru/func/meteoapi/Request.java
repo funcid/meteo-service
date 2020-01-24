@@ -7,11 +7,10 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 public enum Request {
-
     REQUEST_NEW_DATA("mobile"),
-    REQUEST_BY_ID("byId?id=%d"),
-    REQUEST_BY_LOCATION("byLocation?location=%s"),
-    REQUEST_BY_TIMESTAMP("byTimestamp?timestamp=%s"),;
+    REQUEST_BY_ID("api/byId?id=%d"),
+    REQUEST_BY_LOCATION("api/byLocation?location=%s"),
+    REQUEST_BY_TIMESTAMP("api/byTimestamp?timestamp=%s"),;
 
     private String request;
 
