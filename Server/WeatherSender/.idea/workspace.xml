@@ -7,15 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f4bab60-1cd8-4104-ac34-ec80fb7670a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/layout/round_shape.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/MapsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/MapsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/ApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/FindNotationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/FindNotationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/MobileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/MobileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/NotationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/NotationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/DataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/UserService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

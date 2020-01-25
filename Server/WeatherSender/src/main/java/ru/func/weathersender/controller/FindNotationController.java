@@ -55,7 +55,7 @@ public class FindNotationController {
 
         if (Location.containsName(location)) {
             Location locationObject = Location.valueOf(location.toUpperCase());
-            reversedList = notationRepository.findByLocation(locationObject.getCords()).stream()
+            reversedList = notationRepository.findByLocationAndIsPublic(locationObject.getCords(), true).stream()
                     .filter(Notation::getIsPublic)
                     .collect(Collectors.toList());
             Collections.reverse(reversedList);
@@ -76,7 +76,7 @@ public class FindNotationController {
         ModelAndView modelAndView = new ModelAndView("findSensorsByTimestamp");
         modelAndView.addObject("timestamp", timestamp);
 
-        List<Notation> list = notationRepository.findByTimestamp(timestamp).stream()
+        List<Notation> list = notationRepository.findByTimestampAndIsPublic(timestamp, true).stream()
                 .filter(Notation::getIsPublic)
                 .collect(Collectors.toList());
 

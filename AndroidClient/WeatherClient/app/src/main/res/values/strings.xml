@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">WeatherClient</string>
-    <string name="title_activity_maps">WeatherClient</string>
+    <string name="app_name">MeteoService</string>
+    <string name="title_activity_maps">MeteoService</string>
 </resources>

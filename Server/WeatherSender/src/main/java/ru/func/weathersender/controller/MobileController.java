@@ -53,6 +53,19 @@ public class MobileController {
     @RequestMapping(
             headers = HttpHeaders.ACCEPT + "=" + MediaType.APPLICATION_JSON_VALUE,
             produces = APPLICATION_JSON_VALUE_UTF8,
+            path = "/mobile/check")
+    public boolean checkIfDataCorrect(
+            HttpServletRequest request,
+            @RequestParam String login,
+            @RequestParam String password
+    ) {
+        log.info(LOGGER_OUTPUT_MESSAGE, "JSON", request.getRemoteAddr());
+        return userService.successfulLogin(login, password);
+    }
+
+    @RequestMapping(
+            headers = HttpHeaders.ACCEPT + "=" + MediaType.APPLICATION_JSON_VALUE,
+            produces = APPLICATION_JSON_VALUE_UTF8,
             path = "/mobile/main")
     public List<Notation> sendMobileNewDataJson(HttpServletRequest request) {
         log.info(LOGGER_OUTPUT_MESSAGE, "JSON", request.getRemoteAddr());
