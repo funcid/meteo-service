@@ -1,13 +1,11 @@
 package ru.func.meteoapi;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * @author func 21.12.2019
  */
-@Getter
-@Setter
+@Data
 public final class Notation {
     private Integer id;
     private String location;
