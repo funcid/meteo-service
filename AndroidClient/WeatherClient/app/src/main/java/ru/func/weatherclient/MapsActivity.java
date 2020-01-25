@@ -2,9 +2,9 @@ package ru.func.weatherclient;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -33,10 +33,7 @@ import okhttp3.Response;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     public static final String DATA_MESSAGE = "Обновление через %d сек.\n%s";
-    private static final Request REQUEST = new Request.Builder()
-            .addHeader("Accept", "application/json")
-            .url("http://func-weather.herokuapp.com/mobile")
-            .build();
+    private static Request REQUEST;
 
     private GoogleMap mMap;
     private LatLng chosenMarker;
@@ -58,6 +55,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        if (getIntent().getExtras() != null && getIntent().getExtras().containsKey("login")) {
+            REQUEST = new Request.Builder()
+                    .addHeader("Accept", "application/json")
+                    .url("http://func-weather.herokuapp.com/mobile/private?login=" +
+                            getIntent().getExtras().getString("login") +
+                            "&password=" +
+                            getIntent().getExtras().getString("password")
+                    ).build();
+        } else {
+            REQUEST = new Request.Builder()
+                    .addHeader("Accept", "application/json")
+                    .url("http://func-weather.herokuapp.com/mobile/main")
+                    .build();
+        }
 
         output = findViewById(R.id.output);
         output.setText("Загрузка...");

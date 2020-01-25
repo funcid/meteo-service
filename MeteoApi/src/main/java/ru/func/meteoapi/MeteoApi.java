@@ -12,31 +12,37 @@ import java.io.IOException;
 /**
  * @author func 23.01.2020
  */
-public class MeteoApi {
+public final class MeteoApi {
 
     private static final String WEB_ADDRESS = "https://func-weather.herokuapp.com/";
 
     private static final Gson GSON = new Gson();
     private static final CloseableHttpClient HTTP_CLIENT = HttpClients.createDefault();
 
-    public static Notation[] getLastNotations() {
-        return GSON.fromJson(WEB_ADDRESS + Request.REQUEST_NEW_DATA, Notation[].class);
-    }
-
-    public static Notation getNotationById(int id) {
-        return GSON.fromJson(WEB_ADDRESS + String.format(Request.REQUEST_BY_ID.toString(), id), Notation.class);
-    }
-
-    public static Notation[] getNotationLocation(String location) {
+    public static Notation[] getLastNotations() throws IOException {
         return GSON.fromJson(
-                WEB_ADDRESS + String.format(Request.REQUEST_BY_LOCATION.toString(), location),
+                getResponse(WEB_ADDRESS + Request.REQUEST_NEW_DATA),
+                Notation[].class
+        );
+    }
+
+    public static Notation getNotationById(int id) throws IOException {
+        return GSON.fromJson(
+                getResponse(WEB_ADDRESS + String.format(Request.REQUEST_BY_ID.toString(), id)),
+                Notation.class
+        );
+    }
+
+    public static Notation[] getNotationLocation(String location) throws IOException {
+        return GSON.fromJson(
+                getResponse(WEB_ADDRESS + String.format(Request.REQUEST_BY_LOCATION.toString(), location)),
                 Notation[].class
         );
     }
 
     public static Notation[] getNotationTimestamp(String timestamp) throws IOException {
-        return GSON.fromJson(getResponse(
-                WEB_ADDRESS + String.format(Request.REQUEST_BY_TIMESTAMP.toString(), timestamp)),
+        return GSON.fromJson(
+                getResponse(WEB_ADDRESS + String.format(Request.REQUEST_BY_TIMESTAMP.toString(), timestamp)),
                 Notation[].class
         );
     }
