@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#efefef"
     tools:context=".LoginActivity">
 
     <EditText
@@ -16,9 +17,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
         android:ems="10"
+        android:textSize="32pt"
         android:hint="Логин"
         android:inputType="textPersonName"
         android:textAlignment="center"
+        android:background="@drawable/rounded_edittext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,9 +34,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:ems="10"
+        android:textSize="32pt"
         android:hint="Пароль"
         android:inputType="textPassword"
         android:textAlignment="center"
+        android:background="@drawable/rounded_edittext"
         app:layout_constraintEnd_toEndOf="@+id/login"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/login"
@@ -44,12 +49,13 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="48dp"
         android:background="@layout/round_shape"
         android:onClick="login"
         android:text="Войти"
+        android:textSize="12pt"
         app:layout_constraintEnd_toEndOf="@+id/message"
-        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="@+id/message"
         app:layout_constraintTop_toBottomOf="@+id/message" />
 
@@ -61,13 +67,14 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="48dp"
         android:background="@layout/round_shape"
         android:onClick="skip"
         android:text="Пропустить"
         android:textColor="#ffffff"
+        android:textSize="8pt"
         app:layout_constraintEnd_toEndOf="@+id/message"
-        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintHorizontal_bias="0.927"
         app:layout_constraintStart_toStartOf="@+id/message"
         app:layout_constraintTop_toBottomOf="@+id/message" />
 
@@ -81,6 +88,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
         android:textAlignment="center"
+        android:textSize="10pt"
         app:layout_constraintEnd_toEndOf="@+id/password"
         app:layout_constraintStart_toStartOf="@+id/password"
         app:layout_constraintTop_toBottomOf="@+id/password" />

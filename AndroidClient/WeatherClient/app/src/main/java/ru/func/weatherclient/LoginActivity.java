@@ -47,34 +47,37 @@ public class LoginActivity extends AppCompatActivity {
                             "&password=" +
                             password.getText().toString()
                     ).build();
-
-            new OkHttpClient().newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(final Call call, IOException e) {
-                    message.setText("Ошибка авторизации. Проверте введенные данные.");
-                }
-
-                @Override
-                public void onResponse(Call call, final Response response) {
-                    try {
-                        if (response.body().string().contains("false"))
-                            message.setText("Ошибка авторизации. Проверте введенные данные.");
-                        else {
-                            Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
-                            intent.putExtra("login", login.getText().toString());
-                            intent.putExtra("password", password.getText().toString());
-                            startActivity(intent);
-                        }
-                    } catch (Exception e) {
-                        message.setText("Сервер в спящем режиме. Повторите попытку через минуту.");
-                    }
-                }
-            });
+            throwRequest();
         }
     }
 
     public void skip(View view) {
         Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
         startActivity(intent);
+    }
+
+    private void throwRequest() {
+        new OkHttpClient().newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(final Call call, IOException e) {
+                message.setText("Ошибка авторизации. Проверте введенные данные.");
+            }
+
+            @Override
+            public void onResponse(Call call, final Response response) {
+                try {
+                    if (response.body().string().contains("false"))
+                        message.setText("Ошибка авторизации. Проверте введенные данные.");
+                    else {
+                        Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
+                        intent.putExtra("login", login.getText().toString());
+                        intent.putExtra("password", password.getText().toString());
+                        startActivity(intent);
+                    }
+                } catch (Exception e) {
+                    message.setText("Сервер в спящем режиме. Повторите попытку через минуту.");
+                }
+            }
+        });
     }
 }
