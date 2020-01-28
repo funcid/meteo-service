@@ -19,6 +19,17 @@ public class MailConfig {
     @Value("${spring.mail.username}")
     private String username;
 
+    /* TODO: get value from application.properties file
+     * Or configure mail credentials in application.properties
+     *
+     * And you have to use env variables for passwords, login, tokens and etc, as well
+     * also see mail configuration in application.properties https://github.com/AppLoidx/spring-mail-example
+     * and instead of "password" you should use something like {PASSWORD_IN_ENV:default_value}
+     * example: https://stackoverflow.com/a/35535138
+     *
+     */
+
+
     @Value("${spring.mail.password}")
     private String password;
 
