@@ -8,6 +8,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.util.stream.Stream;
 
 /**
  * @author func 23.01.2020
@@ -33,14 +34,14 @@ public final class MeteoApi {
         );
     }
 
-    public static Notation[] getNotationLocation(String location) throws IOException {
+    public static Notation[] getNotationByLocation(String location) throws IOException {
         return GSON.fromJson(
                 getResponse(WEB_ADDRESS + String.format(Request.REQUEST_BY_LOCATION.toString(), location)),
                 Notation[].class
         );
     }
 
-    public static Notation[] getNotationTimestamp(String timestamp) throws IOException {
+    public static Notation[] getNotationByTimestamp(String timestamp) throws IOException {
         return GSON.fromJson(
                 getResponse(WEB_ADDRESS + String.format(Request.REQUEST_BY_TIMESTAMP.toString(), timestamp)),
                 Notation[].class

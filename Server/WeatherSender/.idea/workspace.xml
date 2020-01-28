@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5f4bab60-1cd8-4104-ac34-ec80fb7670a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/LoginActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +189,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1edd682a-78ec-4b02-9014-0cae6b1e6577" name="Default Changelist" comment="" />
+      <changelist id="5f4bab60-1cd8-4104-ac34-ec80fb7670a5" name="Default Changelist" comment="" />
       <created>1573316571948</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -244,6 +244,7 @@
       <workItem from="1579361889687" duration="1264000" />
       <workItem from="1579621288545" duration="814000" />
       <workItem from="1579793442752" duration="7065000" />
+      <workItem from="1579967844330" duration="629000" />
     </task>
     <servers />
   </component>
