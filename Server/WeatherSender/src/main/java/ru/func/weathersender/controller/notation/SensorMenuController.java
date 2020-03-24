@@ -1,4 +1,4 @@
-package ru.func.weathersender.controller;
+package ru.func.weathersender.controller.notation;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

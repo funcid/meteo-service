@@ -7,10 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f4bab60-1cd8-4104-ac34-ec80fb7670a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/app/src/main/java/ru/func/weatherclient/LoginActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/DeviceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/entity/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/DeviceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/ApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/FindNotationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/notation/FindNotationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/notation/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/user/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/MobileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/MobileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/user/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/SensorMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/notation/SensorMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/UserService.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,12 +74,17 @@
   </component>
   <component name="ProjectId" id="1TO1x8iclr4Uejq7MlHzpow1AAi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MeteoApi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15429688" />
@@ -77,6 +92,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\func\Documents\GitHub\MeteoService\Server\WeatherSender\src\main\java\ru\func\weathersender\service" />
+      <recent name="C:\Users\func\Documents\GitHub\MeteoService\Server\WeatherSender\src\main\java\ru\func\weathersender\entity" />
+      <recent name="C:\Users\func\Documents\GitHub\MeteoService\Server\WeatherSender\src\main\java\ru\func\weathersender\repository" />
+      <recent name="C:\Users\func\Documents\GitHub\MeteoService\Server\WeatherSender\src\main\java\ru\func\weathersender\controller" />
+      <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources\assets" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.func.weathersender.config" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources\assets\css" />
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources\templates" />
@@ -84,25 +109,6 @@
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\webapp" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ru.func.weathersender.config" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources\assets" />
-      <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.43">
     <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -184,6 +190,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -263,5 +281,31 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="772" y="274" key="#SQL_Dialects" timestamp="1585093903992">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="772" y="274" key="#SQL_Dialects/0.0.2560.1400@0.0.2560.1400" timestamp="1585093903992" />
+    <state width="2505" height="276" key="GridCell.Tab.0.bottom" timestamp="1585093727591">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="276" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585093727591" />
+    <state width="2505" height="276" key="GridCell.Tab.0.center" timestamp="1585093727591">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="276" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585093727591" />
+    <state width="2505" height="276" key="GridCell.Tab.0.left" timestamp="1585093727591">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="276" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585093727591" />
+    <state width="2505" height="276" key="GridCell.Tab.0.right" timestamp="1585093727591">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="276" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585093727591" />
+    <state x="657" y="255" key="SettingsEditor" timestamp="1585094049964">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="657" y="255" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1585094049964" />
   </component>
 </project>

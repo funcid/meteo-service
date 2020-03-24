@@ -69,10 +69,9 @@ public class UserService {
         return true;
     }
 
-    public boolean successfulLogin(String login, String password) {
+    public Optional<User> successfulLogin(String login, String password) {
         return userRepository.findByLogin(login)
                 .filter(User::isActivated)
-                .filter(user -> user.getPassword().equals(password))
-                .isPresent();
+                .filter(user -> user.getPassword().equals(password));
     }
 }

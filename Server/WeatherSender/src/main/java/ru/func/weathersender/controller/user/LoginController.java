@@ -1,4 +1,4 @@
-package ru.func.weathersender.controller;
+package ru.func.weathersender.controller.user;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class LoginController {
             @RequestParam String login,
             @RequestParam String password
     ) {
-        if (userService.successfulLogin(login, password)) {
+        if (userService.successfulLogin(login, password).isPresent()) {
             log.info("{} успешно авторизовался.", login);
             return "sensors";
         }

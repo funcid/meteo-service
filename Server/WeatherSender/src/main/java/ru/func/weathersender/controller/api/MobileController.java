@@ -1,4 +1,4 @@
-package ru.func.weathersender.controller;
+package ru.func.weathersender.controller.api;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +42,7 @@ public class MobileController {
             @RequestParam String password
     ) {
         log.info(LOGGER_OUTPUT_MESSAGE, "JSON", request.getRemoteAddr());
-        if (userService.successfulLogin(login, password)) {
+        if (userService.successfulLogin(login, password).isPresent()) {
             List<Notation> newNotationsByAuthor = dataService.getNewNotificationList(true);
             newNotationsByAuthor.addAll(dataService.getNewNotificationListByAuthor(login));
             return newNotationsByAuthor;
@@ -60,7 +60,7 @@ public class MobileController {
             @RequestParam String password
     ) {
         log.info(LOGGER_OUTPUT_MESSAGE, "JSON", request.getRemoteAddr());
-        return userService.successfulLogin(login, password);
+        return userService.successfulLogin(login, password).isPresent();
     }
 
     @RequestMapping(

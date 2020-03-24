@@ -1,4 +1,4 @@
-package ru.func.weathersender.controller;
+package ru.func.weathersender.controller.notation;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
