@@ -1,5 +1,8 @@
 package ru.func.weathersender.entity;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -7,6 +10,9 @@ import javax.persistence.*;
 /**
  * @author func 23.01.2020
  */
+@Builder
+@Getter
+@Setter
 @Entity
 @Table(name = "variables")
 public class Device {
