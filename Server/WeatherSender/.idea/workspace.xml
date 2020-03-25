@@ -6,21 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f4bab60-1cd8-4104-ac34-ec80fb7670a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/DeviceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/entity/Device.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/DeviceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/ApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/FindNotationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/notation/FindNotationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/notation/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/user/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/MobileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/MobileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/user/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/SensorMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/notation/SensorMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/UserService.java" afterDir="false" />
-    </list>
+    <list default="true" id="5f4bab60-1cd8-4104-ac34-ec80fb7670a5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
