@@ -21,12 +21,18 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 @RestController
 public class DeviceController {
-    @Autowired
-    protected DeviceRepository deviceRepository;
-    @Autowired
-    protected DeviceService deviceService;
-    @Autowired
+    private DeviceRepository deviceRepository;
+    private DeviceService deviceService;
     private UserService userService;
+
+    @Autowired
+    public DeviceController(DeviceRepository deviceRepository,
+                            DeviceService deviceService,
+                            UserService userService) {
+        this.deviceRepository = deviceRepository;
+        this.deviceService = deviceService;
+        this.userService = userService;
+    }
 
     @ResponseBody
     @RequestMapping("/device")

@@ -15,8 +15,12 @@ import ru.func.weathersender.service.UserService;
 @Controller
 public class LoginController {
 
-    @Autowired
     private UserService userService;
+
+    @Autowired
+    public LoginController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/login")
     public String login() {

@@ -24,6 +24,8 @@ public class XmlNotationParser implements NotationDataParser {
     private DocumentBuilder documentBuilder;
     private Document document;
 
+    private String[] tags = { "location", "temperature", "pressure", "humidity" };
+
     public XmlNotationParser() throws ParserConfigurationException {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         documentBuilderFactory.setValidating(false);
@@ -51,9 +53,8 @@ public class XmlNotationParser implements NotationDataParser {
             rootElement.appendChild(contentElement);
         });
 
-        try {
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
+        try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+             DataOutputStream dataOutputStream = new DataOutputStream(outputStream)) {
 
             Transformer transformer = buildTransformer();
             transformer.transform(new DOMSource(document), new StreamResult(dataOutputStream));
@@ -75,9 +76,8 @@ public class XmlNotationParser implements NotationDataParser {
     }
 
     private void createAndAddData(Element parent, String... args) {
-        String[] nameArray = "location, temperature, pressure, humidity".split(", ");
-        for (int i = 0; i < nameArray.length; i++) {
-            Element location = document.createElement(nameArray[i]);
+        for (int i = 0; i < tags.length; i++) {
+            Element location = document.createElement(tags[i]);
             location.setTextContent(args[i]);
             parent.appendChild(location);
         }

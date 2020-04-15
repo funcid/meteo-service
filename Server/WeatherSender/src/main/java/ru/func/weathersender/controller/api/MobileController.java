@@ -23,14 +23,19 @@ import java.util.List;
 @RestController
 public class MobileController {
 
-    @Autowired
-    protected DataService dataService;
-    @Autowired
-    protected UserService userService;
+    private DataService dataService;
+    private UserService userService;
 
     private static final String APPLICATION_JSON_VALUE_UTF8 = MediaType.APPLICATION_JSON_VALUE + ";charset=utf-8";
     private static final String APPLICATION_XML_VALUE_UTF8 = MediaType.APPLICATION_XML_VALUE + ";charset=utf-8";
     private static final String LOGGER_OUTPUT_MESSAGE = "Свежие записи были оправлены в формате {}. IP получателя {}.";
+
+    @Autowired
+    public MobileController(DataService dataService,
+                            UserService userService) {
+        this.dataService = dataService;
+        this.userService = userService;
+    }
 
     @RequestMapping(
             headers = HttpHeaders.ACCEPT + "=" + MediaType.APPLICATION_JSON_VALUE,

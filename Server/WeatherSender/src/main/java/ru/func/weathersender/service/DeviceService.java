@@ -13,9 +13,14 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 @Service
 public class DeviceService {
-    @Autowired
+
     private DeviceRepository deviceRepository;
-    
+
+    @Autowired
+    public DeviceService(DeviceRepository deviceRepository) {
+        this.deviceRepository = deviceRepository;
+    }
+
     public Optional<Device> create(String author, String deviceName, String data) {
         if (deviceRepository.findByDeviceName(deviceName).isPresent()) {
             return Optional.empty();
@@ -34,7 +39,9 @@ public class DeviceService {
     
     public String getData(String deviceName) {
         AtomicReference<String> data = new AtomicReference<>("{}");
-        deviceRepository.findByDeviceName(deviceName).ifPresent(device -> data.set(device.getStatus()));
+        deviceRepository.findByDeviceName(deviceName)
+                .map(Device::getStatus)
+                .ifPresent(data::set);
         return data.get();
     }
 }
