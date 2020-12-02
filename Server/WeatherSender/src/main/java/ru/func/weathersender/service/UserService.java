@@ -29,11 +29,15 @@ public class UserService {
             "Спасибо за использование нашего сервиса!\n" +
             "%d";
 
-    @Autowired
     private UserRepository userRepository;
 
-    @Autowired
     private MailSender mailSender;
+
+    @Autowired
+    public UserService(UserRepository userRepository, MailSender mailSender) {
+        this.userRepository = userRepository;
+        this.mailSender = mailSender;
+    }
 
     public boolean addUser(User user) {
         Optional<User> userFromDb = userRepository.findByLogin(user.getLogin());
@@ -59,20 +63,17 @@ public class UserService {
 
     public boolean activateUser(String code) {
         Optional<User> user = userRepository.findByActivationCode(code);
-        if (!user.isPresent())
-            return false;
         user.ifPresent(dbUser -> {
             dbUser.setActivationCode(null);
             dbUser.setActivated(true);
             userRepository.save(dbUser);
         });
-        return true;
+        return user.isPresent();
     }
 
-    public boolean successfulLogin(String login, String password) {
+    public Optional<User> successfulLogin(String login, String password) {
         return userRepository.findByLogin(login)
                 .filter(User::isActivated)
-                .filter(user -> user.getPassword().equals(password))
-                .isPresent();
+                .filter(user -> user.getPassword().equals(password));
     }
 }

@@ -7,10 +7,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f4bab60-1cd8-4104-ac34-ec80fb7670a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidClient/WeatherClient/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MeteoApi/.idea/MeteoApi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MeteoApi/.idea/MeteoApi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MeteoApi/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MeteoApi/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MeteoApi/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/WeatherSender.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WeatherSender.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_2_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_1_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_48.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_9_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_1_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_2_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_2_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_2_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_2_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_2_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_2_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_2_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_2_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/ApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/DeviceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/MobileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/api/MobileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/notation/FindNotationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/notation/FindNotationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/notation/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/notation/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/user/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/user/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/user/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/controller/user/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/entity/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/entity/Device.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/entity/Notation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/parser/XmlNotationParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/parser/XmlNotationParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/repository/NotationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/DataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/DeviceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/MailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/MailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/util/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/func/weathersender/util/Location.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,10 +89,10 @@
       <list>
         <option value="Enum" />
         <option value="Jsp File" />
-        <option value="Interface" />
         <option value="HTML File" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -64,19 +115,34 @@
   </component>
   <component name="ProjectId" id="1TO1x8iclr4Uejq7MlHzpow1AAi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MeteoApi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../RaidArea51/src/main/java/ru/func/raidarea/RaidArea.java" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\func\Documents\GitHub\MeteoService\Server\WeatherSender\src\main\java\ru\func\weathersender\service" />
+      <recent name="C:\Users\func\Documents\GitHub\MeteoService\Server\WeatherSender\src\main\java\ru\func\weathersender\entity" />
+      <recent name="C:\Users\func\Documents\GitHub\MeteoService\Server\WeatherSender\src\main\java\ru\func\weathersender\repository" />
+      <recent name="C:\Users\func\Documents\GitHub\MeteoService\Server\WeatherSender\src\main\java\ru\func\weathersender\controller" />
+      <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources\assets" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.func.weathersender.config" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources\assets\css" />
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources\templates" />
@@ -84,25 +150,6 @@
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\webapp" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ru.func.weathersender.config" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources\assets" />
-      <recent name="C:\Users\1\Desktop\WeatherStation\WeatherStation\Server\WeatherSender\src\main\resources" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.43">
     <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -184,12 +231,24 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1edd682a-78ec-4b02-9014-0cae6b1e6577" name="Default Changelist" comment="" />
+      <changelist id="5f4bab60-1cd8-4104-ac34-ec80fb7670a5" name="Default Changelist" comment="" />
       <created>1573316571948</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -244,6 +303,22 @@
       <workItem from="1579361889687" duration="1264000" />
       <workItem from="1579621288545" duration="814000" />
       <workItem from="1579793442752" duration="7065000" />
+      <workItem from="1579967844330" duration="629000" />
+      <workItem from="1585121910104" duration="1802000" />
+      <workItem from="1585302579796" duration="4033000" />
+      <workItem from="1585379675319" duration="314000" />
+      <workItem from="1585380041384" duration="1358000" />
+      <workItem from="1585413851387" duration="1041000" />
+      <workItem from="1585467699276" duration="3135000" />
+      <workItem from="1585563690115" duration="27000" />
+      <workItem from="1585654343030" duration="46000" />
+      <workItem from="1586154341830" duration="1923000" />
+      <workItem from="1586224189776" duration="362000" />
+      <workItem from="1586224643938" duration="26000" />
+      <workItem from="1586516799644" duration="2593000" />
+      <workItem from="1586583194051" duration="4970000" />
+      <workItem from="1586679401621" duration="632000" />
+      <workItem from="1586850230006" duration="4999000" />
     </task>
     <servers />
   </component>
@@ -262,5 +337,63 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="772" y="274" key="#SQL_Dialects" timestamp="1586527197537">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="772" y="274" key="#SQL_Dialects/0.0.2560.1400@0.0.2560.1400" timestamp="1586527197537" />
+    <state x="923" y="230" key="#Tomcat_8.5.43" timestamp="1586587343254">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="923" y="230" key="#Tomcat_8.5.43/0.0.2560.1400@0.0.2560.1400" timestamp="1586587343254" />
+    <state x="1041" y="307" key="#com.intellij.ide.util.MemberChooser" timestamp="1586850729992">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1041" y="307" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586850729992" />
+    <state x="947" y="385" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586586509777">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="947" y="385" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586586509777" />
+    <state x="1010" y="396" key="FileChooserDialogImpl" timestamp="1586224350104">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="396" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1586224350104" />
+    <state width="2505" height="276" key="GridCell.Tab.0.bottom" timestamp="1586898874840">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="276" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586898874840" />
+    <state width="2505" height="276" key="GridCell.Tab.0.center" timestamp="1586898874839">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="276" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586898874839" />
+    <state width="2505" height="276" key="GridCell.Tab.0.left" timestamp="1586898874839">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="276" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586898874839" />
+    <state width="2505" height="276" key="GridCell.Tab.0.right" timestamp="1586898874839">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="276" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586898874839" />
+    <state x="657" y="255" key="SettingsEditor" timestamp="1586154454384">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="657" y="255" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1586154454384" />
+    <state x="891" y="481" key="com.intellij.ide.util.TipDialog" timestamp="1586679724347">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="891" y="481" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586679724347" />
+    <state x="550" y="210" key="new project wizard" timestamp="1586680031763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="550" y="210" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1586680031763" />
+    <state x="894" y="514" width="879" height="371" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1586154452272">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="894" y="514" width="879" height="371" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586154452272" />
+    <state x="852" y="327" width="840" height="1034" key="run.anything.popup" timestamp="1585415203901">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="852" y="327" width="840" height="1034" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1585415203901" />
   </component>
 </project>

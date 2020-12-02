@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText login, password;
     private TextView message;
-    private static Request request;
+    private Request request;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

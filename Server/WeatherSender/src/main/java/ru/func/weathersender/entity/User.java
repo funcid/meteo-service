@@ -15,8 +15,8 @@ import javax.persistence.*;
 @Table(name = "users")
 @Builder
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(generator = "increment")

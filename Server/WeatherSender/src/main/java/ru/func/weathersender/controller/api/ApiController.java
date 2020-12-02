@@ -1,4 +1,4 @@
-package ru.func.weathersender.controller;
+package ru.func.weathersender.controller.api;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +21,15 @@ import java.util.List;
 @RestController
 public class ApiController {
 
-    @Autowired
-    protected DataService dataService;
+    private DataService dataService;
 
     private static final String APPLICATION_JSON_VALUE_UTF8 = MediaType.APPLICATION_JSON_VALUE + ";charset=utf-8";
     private static final String LOGGER_OUTPUT_MESSAGE = "Свежие записи были оправлены в формате {}. IP получателя {}.";
+
+    @Autowired
+    public ApiController(DataService dataService) {
+        this.dataService = dataService;
+    }
 
     @GetMapping(
             headers = HttpHeaders.ACCEPT + "=" + MediaType.APPLICATION_JSON_VALUE,

@@ -1,4 +1,4 @@
-package ru.func.weathersender.controller;
+package ru.func.weathersender.controller.api;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +23,19 @@ import java.util.List;
 @RestController
 public class MobileController {
 
-    @Autowired
-    protected DataService dataService;
-    @Autowired
-    protected UserService userService;
+    private DataService dataService;
+    private UserService userService;
 
     private static final String APPLICATION_JSON_VALUE_UTF8 = MediaType.APPLICATION_JSON_VALUE + ";charset=utf-8";
     private static final String APPLICATION_XML_VALUE_UTF8 = MediaType.APPLICATION_XML_VALUE + ";charset=utf-8";
     private static final String LOGGER_OUTPUT_MESSAGE = "Свежие записи были оправлены в формате {}. IP получателя {}.";
+
+    @Autowired
+    public MobileController(DataService dataService,
+                            UserService userService) {
+        this.dataService = dataService;
+        this.userService = userService;
+    }
 
     @RequestMapping(
             headers = HttpHeaders.ACCEPT + "=" + MediaType.APPLICATION_JSON_VALUE,
@@ -42,7 +47,7 @@ public class MobileController {
             @RequestParam String password
     ) {
         log.info(LOGGER_OUTPUT_MESSAGE, "JSON", request.getRemoteAddr());
-        if (userService.successfulLogin(login, password)) {
+        if (userService.successfulLogin(login, password).isPresent()) {
             List<Notation> newNotationsByAuthor = dataService.getNewNotificationList(true);
             newNotationsByAuthor.addAll(dataService.getNewNotificationListByAuthor(login));
             return newNotationsByAuthor;
@@ -60,7 +65,7 @@ public class MobileController {
             @RequestParam String password
     ) {
         log.info(LOGGER_OUTPUT_MESSAGE, "JSON", request.getRemoteAddr());
-        return userService.successfulLogin(login, password);
+        return userService.successfulLogin(login, password).isPresent();
     }
 
     @RequestMapping(

@@ -1,27 +1,26 @@
 package ru.func.weathersender.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 /**
- * @author func 21.12.2019
+ * @author func 11.04.2020
+ * @project WeatherSender
  */
 @Entity
-@Table(name = "notations")
+@Getter
+@Setter
 @Builder
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "notations")
 public class Notation {
+
     @Id
-    @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    @Column(nullable = false)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
     @Column(nullable = false)
     private String location;

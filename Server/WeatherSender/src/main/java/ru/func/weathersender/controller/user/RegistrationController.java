@@ -1,4 +1,4 @@
-package ru.func.weathersender.controller;
+package ru.func.weathersender.controller.user;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +22,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @Controller
 public class RegistrationController {
 
-    @Autowired
     private UserService userService;
+
+    @Autowired
+    public RegistrationController(UserService userService) {
+        this.userService = userService;
+    }
 
     private EmailValidator emailValidator = new EmailValidator();
 
@@ -42,8 +46,8 @@ public class RegistrationController {
         StringBuilder message = new StringBuilder("Ошибка регистрации:\n");
         if (password.isEmpty() || password.length() < 4) {
             message.append("Пароль должен быть длиннее 4 и короче 16 знаков.\n");
-        } else if (login.length() < 4) {
-            message.append("Логин должен быть длиннее 4 и короче 16 знаков.\n");
+        } else if (login.length() < 4 || login.length() > 36) {
+            message.append("Логин должен быть длиннее 4 и короче 36 знаков.\n");
         } else if (!emailValidator.validate(mail)) {
             message.append("Почта указа не корректно.\n");
         } else if (!userService.addUser(User.builder()
@@ -67,7 +71,10 @@ public class RegistrationController {
     public String activate(Model model, @PathVariable String code) {
         boolean isActivated = userService.activateUser(code);
 
-        model.addAttribute("message", isActivated ? "Пользователь был активирован." : "Код подтверждения не найден.");
+        model.addAttribute("message", isActivated ?
+                "Аккаунт был активирован." :
+                "Код подтверждения не найден."
+        );
 
         return "login";
     }

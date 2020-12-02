@@ -1,4 +1,4 @@
-package ru.func.weathersender.controller;
+package ru.func.weathersender.controller.notation;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +25,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @Controller
 public class FindNotationController {
 
+    private NotationRepository notationRepository;
+
     @Autowired
-    protected NotationRepository notationRepository;
+    public FindNotationController(NotationRepository notationRepository) {
+        this.notationRepository = notationRepository;
+    }
 
     @RequestMapping(path = "/findSensorById", method = POST)
     public ModelAndView findNotationById(@RequestParam Integer id) {
@@ -55,7 +59,7 @@ public class FindNotationController {
 
         if (Location.containsName(location)) {
             Location locationObject = Location.valueOf(location.toUpperCase());
-            reversedList = notationRepository.findByLocationAndIsPublic(locationObject.getCords(), true).stream()
+            reversedList = notationRepository.findNotationsByLocationAndIsPublic(locationObject.getCords(), true).stream()
                     .filter(Notation::getIsPublic)
                     .collect(Collectors.toList());
             Collections.reverse(reversedList);
@@ -76,7 +80,7 @@ public class FindNotationController {
         ModelAndView modelAndView = new ModelAndView("findSensorsByTimestamp");
         modelAndView.addObject("timestamp", timestamp);
 
-        List<Notation> list = notationRepository.findByTimestampAndIsPublic(timestamp, true).stream()
+        List<Notation> list = notationRepository.findNotationsByTimestampAndIsPublic(timestamp, true).stream()
                 .filter(Notation::getIsPublic)
                 .collect(Collectors.toList());
 

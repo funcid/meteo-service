@@ -3,6 +3,8 @@ package ru.func.weathersender.util;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.stream.Stream;
+
 /**
  * @author func 05.01.2020
  */
@@ -16,10 +18,6 @@ public enum Location {
     private String cords;
 
     public static boolean containsName(String name) {
-        for(Location location : Location.values())
-            if (location.name().equalsIgnoreCase(name))
-                return true;
-
-        return false;
+        return Stream.of(Location.values()).anyMatch(location -> location.name().equalsIgnoreCase(name));
     }
 }

@@ -1,4 +1,4 @@
-package ru.func.weathersender.controller;
+package ru.func.weathersender.controller.notation;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.func.weathersender.entity.Notation;
-import ru.func.weathersender.entity.User;
 import ru.func.weathersender.repository.NotationRepository;
 import ru.func.weathersender.repository.UserRepository;
 import ru.func.weathersender.util.Location;
@@ -16,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Optional;
 
 /**
  * @author func 06.01.2020
@@ -25,10 +23,15 @@ import java.util.Optional;
 @Controller
 public class IndexController {
 
-    @Autowired
-    protected NotationRepository notationRepository;
-    @Autowired
+    private NotationRepository notationRepository;
     private UserRepository userRepository;
+
+    @Autowired
+    public IndexController(NotationRepository notationRepository,
+                           UserRepository userRepository) {
+        this.notationRepository = notationRepository;
+        this.userRepository = userRepository;
+    }
 
     private SimpleDateFormat dateFormat =
             new SimpleDateFormat("yyyy-MM-dd-k-m", new Locale("ru", "RU"));
@@ -45,21 +48,26 @@ public class IndexController {
             @RequestParam(name = "isPublic", required = false) String isPublic,
             HttpServletRequest request) {
         if (!location.equals("none") && !Strings.isEmpty(login)) {
-            Optional<User> user = userRepository.findByLogin(login);
-            if (user.isPresent() && user.get().getPassword().equals(password)) {
-                Notation notation = notationRepository.save(Notation.builder()
-                        .location(Location.valueOf(location).getCords())
-                        .pressure(pressure)
-                        .humidity(humidity)
-                        .temperature(temperature)
-                        .timestamp(dateFormat.format(new Date()))
-                        .addition(addition)
-                        .author(login)
-                        .isPublic(Boolean.getBoolean(isPublic))
-                        .build()
-                );
-                log.info("Создана новая запись с ID {}. IP отправителя {}.", notation.getId(), request.getRemoteAddr());
-            }
+            userRepository.findByLogin(login).ifPresent(member -> {
+                if (member.getPassword().equals(password)) {
+                    Notation notation = notationRepository.save(Notation.builder()
+                            .location(Location.valueOf(location).getCords())
+                            .pressure(pressure)
+                            .humidity(humidity)
+                            .temperature(temperature)
+                            .timestamp(dateFormat.format(new Date()))
+                            .addition(addition)
+                            .author(login)
+                            .isPublic(Boolean.getBoolean(isPublic))
+                            .build()
+                    );
+                    log.info(
+                            "Создана новая запись с ID {}. IP отправителя {}.",
+                            notation.getId(),
+                            request.getRemoteAddr()
+                    );
+                }
+            });
         }
         return "index";
     }

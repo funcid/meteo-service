@@ -17,8 +17,12 @@ import java.util.stream.Stream;
 @Service
 public class DataService {
 
-    @Autowired
     protected NotationRepository notationRepository;
+
+    @Autowired
+    public DataService(NotationRepository notationRepository) {
+        this.notationRepository = notationRepository;
+    }
 
     public List<Notation> getNewNotificationList(boolean isPublic) {
         return Stream.of(Location.values())
@@ -30,7 +34,7 @@ public class DataService {
 
     public List<Notation> getNewNotificationListByAuthor(String author) {
         return Stream.of(Location.values())
-                .map(location -> notationRepository.findNewestNotationByAuthor(author))
+                .map(location -> notationRepository.findNewestByAuthor(author))
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .collect(Collectors.toList());
@@ -42,13 +46,13 @@ public class DataService {
     }
 
     public List<Notation> getNotationsByLocation(String location, boolean isPublic) {
-        return notationRepository.findByLocationAndIsPublic(location, isPublic).stream()
+        return notationRepository.findNotationsByLocationAndIsPublic(location, isPublic).stream()
                 .filter(Notation::getIsPublic)
                 .collect(Collectors.toList());
     }
 
     public List<Notation> getNotationsByTimestamp(String timestamp, boolean isPublic) {
-        return notationRepository.findByTimestampAndIsPublic(timestamp, isPublic).stream()
+        return notationRepository.findNotationsByTimestampAndIsPublic(timestamp, isPublic).stream()
                 .filter(Notation::getIsPublic)
                 .collect(Collectors.toList());
     }
